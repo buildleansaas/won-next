@@ -1,0 +1,21 @@
+{
+  "name": "won-next",
+  "version": "1.0.0",
+  "description": "won-rva built on react and next.js",
+  "main": "index.js",
+  "repository": "github.com/awitherow/won-next",
+  "author": "austin witherow",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "dev": "next"
+  },
+  "dependencies": {
+    "@zeit/next-css": "^0.1.5",
+    "next": "^5.1.0",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-slick": "^0.23.1",
+    "slick-carousel": "^1.8.1"
+  }
+}

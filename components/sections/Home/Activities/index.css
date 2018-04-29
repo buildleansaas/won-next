@@ -1,0 +1,38 @@
+.Home-info-programs,
+.Home-info-upcoming {
+  padding: 0 24px;
+}
+
+.Home-info-items {
+  margin-bottom: 24px;
+}
+
+.Home-info-item {
+  max-width: 728px;
+}
+
+.Home-info-item h4 {
+  margin-bottom: 0;
+}
+
+.Home-info-item p {
+  margin-top: 8px;
+}
+
+.donation-information {
+  position: relative;
+  padding: 16px;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  color: #818182;
+  background-color: #fefefe;
+  border-color: #fdfdfe;
+
+  font-size: large;
+  max-width: 768px;
+  margin: 0 auto;
+}
+
+.donation-information p {
+  text-align: center !important;
+}
