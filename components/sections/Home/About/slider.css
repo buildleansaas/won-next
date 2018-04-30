@@ -1,3 +1,7 @@
+.slick-list, .slick-slider, .slick-track {
+  position: initial !important; 
+}
+
 .slick-dots {
   bottom: -40px !important;
 }

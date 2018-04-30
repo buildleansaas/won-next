@@ -6,6 +6,7 @@ import About from "../components/sections/Home/About/";
 import Footer from "../components/sections/Home/Footer/";
 
 import "./index.css";
+import "./header.css";
 
 import t from "../locale";
 
@@ -38,6 +39,36 @@ export default class Home extends Component {
 
     return (
       <div id="home" className="Home">
+        <nav>
+          <ul className="header-links">
+            <li>
+              <a href="#home">{header.home}</a>
+            </li>
+            <li>
+              <a href="#activities">{header.activities}</a>
+            </li>
+            <li>
+              <a href="#about">{header.about}</a>
+            </li>
+            <li>
+              <button
+                className="no-button"
+                onClick={() => {
+                  this.changeState("locale", locale === "en" ? "kr" : "en");
+                }}
+              >
+                <img
+                  className="flag"
+                  src={locale === "en" ? "/static/usa.png" : "/static/sk.png"}
+                  alt={`Flag for the country of ${
+                    locale === "en" ? "America" : "South Korea"
+                  }`}
+                />
+              </button>
+            </li>
+          </ul>
+        </nav>
+
         <Introduction
           header={header}
           intro={intro}
