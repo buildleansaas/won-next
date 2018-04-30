@@ -5,9 +5,6 @@ import Activities from "../components/sections/Home/Activities/";
 import About from "../components/sections/Home/About/";
 import Footer from "../components/sections/Home/Footer/";
 
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-
 import "./index.css";
 
 import t from "../locale";
