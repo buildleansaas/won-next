@@ -15,7 +15,7 @@ export default class Home extends Component {
     locale: "en"
   };
 
-  componentWillMount() {
+  componentDidMount() {
     if (typeof window !== "undefined") {
       const localStorageState = JSON.parse(
         window.localStorage.getItem("won-rva")
