@@ -65,6 +65,14 @@
 }
 
 @media (max-width: 450px) {
+  .Home-about-info-text {
+    padding: 24px 24px 0 24px;
+  }
+
+  .gold-background {
+    padding: 0;
+  }
+
   .il-won-image {
     max-width: 80vw;
   }
