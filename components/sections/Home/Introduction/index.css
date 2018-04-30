@@ -7,39 +7,7 @@
   text-align: center;
 }
 
-.header-links {
-  list-style: none;
-  text-align: right;
-  margin: 0;
-  padding: 24px;
-}
-
-@media (max-width: 768px) {
-  .header-links {
-    text-align: center;
-    font-size: 14px;
-  }
-}
-
-.header-links li {
-  display: inline-block;
-  padding: 0 8px;
-  text-transform: uppercase;
-}
-
-.header-links .flag {
-  width: 30px;
-  position: relative;
-  top: 10px;
-}
-
-.header-links a {
-  color: white;
-  font-weight: 300;
-}
-
-.Home-intro,
-.header-links {
+.Home-intro{
   background-color: rgba(34, 34, 34, 0.4);
   color: white;
 }
@@ -47,6 +15,7 @@
 .Home-intro {
   padding: 20px;
   height: 75vh;
+  padding-top: 100px;
 
   font-size: large;
 
@@ -54,6 +23,12 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+
+@media(max-width: 400px) {
+  .Home-intro {
+    height: 95vh;
+  }
 }
 
 .Home-logo {
