@@ -10,3 +10,7 @@ footer {
 footer p {
   text-align: center !important;
 }
+
+footer img {
+  height: 40px;
+}

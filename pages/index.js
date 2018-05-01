@@ -38,7 +38,7 @@ export default class Home extends Component {
 
   render() {
     const { locale } = this.state;
-    const { header, intro, info, about } = t[locale];
+    const { header, intro, info, about, footer } = t[locale];
 
     return (
       <ScrollableAnchor id={"home"}>
@@ -81,7 +81,7 @@ export default class Home extends Component {
           />
           <Activities info={info} />
           <About about={about} />
-          <Footer />
+          <Footer footer={footer} />
         </div>
       </ScrollableAnchor>
     );
