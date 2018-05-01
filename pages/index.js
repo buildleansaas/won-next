@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ScrollableAnchor, { configureAnchors } from "react-scrollable-anchor";
 
 import Introduction from "../components/sections/Home/Introduction/";
 import Activities from "../components/sections/Home/Activities/";
@@ -16,6 +17,8 @@ export default class Home extends Component {
   };
 
   componentDidMount() {
+    configureAnchors({ offset: -116, scrollDuration: 400 });
+
     if (typeof window !== "undefined") {
       const localStorageState = JSON.parse(
         window.localStorage.getItem("won-rva")
@@ -38,47 +41,49 @@ export default class Home extends Component {
     const { header, intro, info, about } = t[locale];
 
     return (
-      <div id="home" className="Home">
-        <nav>
-          <ul className="header-links">
-            <li>
-              <a href="#home">{header.home}</a>
-            </li>
-            <li>
-              <a href="#activities">{header.activities}</a>
-            </li>
-            <li>
-              <a href="#about">{header.about}</a>
-            </li>
-            <li>
-              <button
-                className="no-button"
-                onClick={() => {
-                  this.changeState("locale", locale === "en" ? "kr" : "en");
-                }}
-              >
-                <img
-                  className="flag"
-                  src={locale === "en" ? "/static/usa.png" : "/static/sk.png"}
-                  alt={`Flag for the country of ${
-                    locale === "en" ? "America" : "South Korea"
-                  }`}
-                />
-              </button>
-            </li>
-          </ul>
-        </nav>
+      <ScrollableAnchor id={"home"}>
+        <div className="Home">
+          <nav>
+            <ul className="header-links">
+              <li>
+                <a href="#home">{header.home}</a>
+              </li>
+              <li>
+                <a href="#activities">{header.activities}</a>
+              </li>
+              <li>
+                <a href="#about">{header.about}</a>
+              </li>
+              <li>
+                <button
+                  className="no-button"
+                  onClick={() => {
+                    this.changeState("locale", locale === "en" ? "kr" : "en");
+                  }}
+                >
+                  <img
+                    className="flag"
+                    src={locale === "en" ? "/static/usa.png" : "/static/sk.png"}
+                    alt={`Flag for the country of ${
+                      locale === "en" ? "America" : "South Korea"
+                    }`}
+                  />
+                </button>
+              </li>
+            </ul>
+          </nav>
 
-        <Introduction
-          header={header}
-          intro={intro}
-          locale={locale}
-          changeState={this.changeState}
-        />
-        <Activities info={info} />
-        <About about={about} />
-        <Footer />
-      </div>
+          <Introduction
+            header={header}
+            intro={intro}
+            locale={locale}
+            changeState={this.changeState}
+          />
+          <Activities info={info} />
+          <About about={about} />
+          <Footer />
+        </div>
+      </ScrollableAnchor>
     );
   }
 }
