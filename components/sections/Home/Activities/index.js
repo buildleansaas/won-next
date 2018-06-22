@@ -1,5 +1,6 @@
 import React from "react";
 import ScrollableAnchor from "react-scrollable-anchor";
+import Link from "next/link";
 
 import "./index.css";
 
@@ -48,9 +49,9 @@ export default function Activities({ info }) {
                 ))}
             </div>
             <p>
-              <a href="" className="button-link">
+              <Link href="/all-events" className="button-link">
                 {info.button_future}
-              </a>
+              </Link>
             </p>
           </div>
         </div>
