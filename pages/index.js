@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ScrollableAnchor, { configureAnchors } from "react-scrollable-anchor";
+import Head from "next/head";
 
 import Introduction from "../components/sections/Home/Introduction/";
 import Activities from "../components/sections/Home/Activities/";
@@ -43,6 +44,9 @@ export default class Home extends Component {
     return (
       <ScrollableAnchor id={"home"}>
         <div className="Home">
+          <Head>
+            <title>Home | Won Buddhism of Richmond</title>
+          </Head>
           <nav>
             <ul className="header-links">
               <li>

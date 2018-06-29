@@ -9,7 +9,6 @@ export default class MyDocument extends Document {
     return (
       <html>
         <Head>
-          <title>{title}</title>
           <link rel="icon" type="image/x-icon" href="/static/logo.png" />
           <meta
             name="keywords"

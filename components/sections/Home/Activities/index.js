@@ -1,5 +1,6 @@
 import React from "react";
 import ScrollableAnchor from "react-scrollable-anchor";
+import Link from "next/link";
 
 import "./index.css";
 
@@ -34,23 +35,31 @@ export default function Activities({ info }) {
             <div className="Home-info-items">
               {info.upcoming.items
                 .slice(0, 3)
-                .map(({ date, title, description, register }, i) => (
+                .map(({ start, end, title, description, registration }, i) => (
                   <div key={i} className="Home-info-item">
                     <h4 className="Home-info-item-title">
-                      {date} - {title}
+                      {title}
+                      <br />
+                      <small>
+                        <strong>
+                          {start} - {end}
+                        </strong>
+                      </small>
                     </h4>
                     <p>{description}</p>
-                    <a href={`mailto:${register}`}>
+                    <a
+                      href={`mailto:${registration}?subject=${title} registration`}
+                    >
                       {info.button_more_info}
                     </a>{" "}
-                    {info.call_option} (804)-235-XXXX.
+                    {info.call_option} (804)-325-5760.
                   </div>
                 ))}
             </div>
             <p>
-              <a href="" className="button-link">
-                {info.button_future}
-              </a>
+              <Link href="/all-events">
+                <span className="button-link">{info.button_future}</span>
+              </Link>
             </p>
           </div>
         </div>
@@ -65,7 +74,10 @@ export default function Activities({ info }) {
             />
           </p>
           <p>
-            <a href="" className="button-link">
+            <a
+              href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZHRPK4RDFN7T6"
+              className="button-link"
+            >
               {info.donations.paypal_button}
             </a>
           </p>
