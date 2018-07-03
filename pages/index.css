@@ -142,3 +142,8 @@ button:focus {
   background: black;
   cursor: pointer;
 }
+
+p.no-items {
+  font-size: 120%;
+  padding-bottom: 16px;
+}

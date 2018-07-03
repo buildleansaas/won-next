@@ -32,30 +32,39 @@ export default function Activities({ info }) {
           </div>
           <div className="Home-info-upcoming">
             <h3>{info.upcoming.title}</h3>
-            <div className="Home-info-items">
-              {info.upcoming.items
-                .slice(0, 3)
-                .map(({ start, end, title, description, registration }, i) => (
-                  <div key={i} className="Home-info-item">
-                    <h4 className="Home-info-item-title">
-                      {title}
-                      <br />
-                      <small>
-                        <strong>
-                          {start} - {end}
-                        </strong>
-                      </small>
-                    </h4>
-                    <p>{description}</p>
-                    <a
-                      href={`mailto:${registration}?subject=${title} registration`}
-                    >
-                      {info.button_more_info}
-                    </a>{" "}
-                    {info.call_option} (804)-325-5760.
-                  </div>
-                ))}
-            </div>
+            {info.upcoming.items.length === 0 ? (
+              <p className="no-items">
+                Currently there are no upcoming events, we hope to populate this
+                list shortly!
+              </p>
+            ) : (
+              <div className="Home-info-items">
+                {info.upcoming.items
+                  .slice(0, 3)
+                  .map(
+                    ({ start, end, title, description, registration }, i) => (
+                      <div key={i} className="Home-info-item">
+                        <h4 className="Home-info-item-title">
+                          {title}
+                          <br />
+                          <small>
+                            <strong>
+                              {start} - {end}
+                            </strong>
+                          </small>
+                        </h4>
+                        <p>{description}</p>
+                        <a
+                          href={`mailto:${registration}?subject=${title} registration`}
+                        >
+                          {info.button_more_info}
+                        </a>{" "}
+                        {info.call_option} (804)-325-5760.
+                      </div>
+                    )
+                  )}
+              </div>
+            )}
             <p>
               <Link href="/all-events">
                 <span className="button-link">{info.button_future}</span>

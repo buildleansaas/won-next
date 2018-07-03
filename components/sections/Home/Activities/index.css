@@ -3,6 +3,11 @@
   padding: 0 24px;
 }
 
+p.no-items {
+  font-size: 120%;
+  margin-bottom: 16px 0;
+}
+
 .Home-info-items {
   margin-bottom: 24px;
 }

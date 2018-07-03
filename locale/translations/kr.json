@@ -60,16 +60,7 @@
     },
     "upcoming": {
       "title": "Upcoming Events",
-      "items": [
-        {
-          "start": "1.05.2018",
-          "end": "31.05.2018",
-          "title": "2nd Annual Youngsan Stay in Korea",
-          "description":
-            "Enjoy a month long retreat in the peaceful and sacred space of Youngsan, protected by the busy city life, intended to allow participants to quiet the mind and open the heart while learning deeply the principles of Won Buddhism.",
-          "registration": "rva@wonbuddhism.org"
-        }
-      ]
+      "items": []
     },
     "button_future": "See All Future Events",
     "button_more_info": "More Info by Email",
