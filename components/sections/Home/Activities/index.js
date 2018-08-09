@@ -12,8 +12,9 @@ export default function Activities({ info }) {
           <div className="Home-info-programs">
             <h3>{info.programs.title}</h3>
             <div className="Home-info-items">
-              {info.programs.items.map(
-                ({ day, times, title, description }, i) => (
+              {info.programs.items
+                .filter(({ active }) => active)
+                .map(({ day, times, title, description }, i) => (
                   <div key={i} className="Home-info-item">
                     <h4 className="Home-info-item-title">
                       {title}
@@ -26,8 +27,7 @@ export default function Activities({ info }) {
                     </h4>
                     <p>{description}</p>
                   </div>
-                )
-              )}
+                ))}
             </div>
           </div>
           <div className="Home-info-upcoming">

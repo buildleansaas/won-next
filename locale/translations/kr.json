@@ -15,46 +15,52 @@
       "title": "Ongoing Programs",
       "items": [
         {
+          "active": false,
           "day": "Monday",
-          "times": "6:00pm - 7:00pm",
+          "times": "6:30pm - 7:30pm",
           "title": "Tai Chi at the Mechanicsville Library",
           "description":
             "Join us at the Tai Chi is meditation in movement. Its soft movements create flows of energy that cultivate your physical and inner strength. In this class, learn about the energy of Yin and Yang to bring health, stability and vitality into your life. Friendly for all ages."
         },
         {
+          "active": true,
           "day": "Tuesday",
-          "times": "10:00am - 11:15am",
-          "title": "Breathing Meditation",
+          "times": "10:30am - 11:30am",
+          "title": "Breathing and Chanting Meditation",
           "description":
-            "Breathing Meditation focuses on balancing the body and mind by following the breath. Every moment of every day, we rely on our breath, but few of us know how their breath affects them and how to breathe mindfully. In this class, learn to accumulate and cultivate your Qi energy."
+            "Breathing Meditation focuses on balancing the body and mind by following the breath. Every moment of every day, we rely on our breath without consciously tapping into the that source of Univesral Power. Chanting Meditation vibrates powerful meaning into the Universe around us, focuses the mind, and creates energetic calm in the body and Soul."
         },
         {
+          "active": true,
           "day": "Thursday",
-          "times": "10:00am - 11:15am",
-          "title": "Mindfulness Meditation",
-          "description":
-            "Mindfulness Meditation helps cultivate a peace of mind and increases your ability to handle stressful situations. In this class, you will not only learn how to let go of worries while practicing your sitting meditation, but also how to create a balance of life in every waking momvent."
-        },
-        {
-          "day": "Thursday",
-          "times": "6:00pm - 8:00pm",
+          "times": "2:00pm - 3:30pm",
           "title": "Tai Chi",
           "description":
             "Tai Chi is meditation in movement. Its soft movements create flows of energy that cultivate your physical and inner strength. In this class, learn about the energy of Yin and Yang to bring health, stability and vitality into your life. Friendly for all ages."
         },
         {
+          "active": true,
           "day": "Every Morning",
-          "times": "6:00am - 7:00am",
+          "times": "6:00am - 7:15am",
           "title": "Group Meditation",
           "description":
             "This morning group meditation is based on the Mindfulness Meditation above, but is enhanced by the mornings silent universal energies. The freshness cultivated in this mindful morning practice will last all day."
         },
         {
+          "active": true,
           "day": "Sunday",
-          "times": "10:00am - 11:00am",
+          "times": "10:3pm - 11:45pm",
           "title": "Won Buddhism Korean Service",
           "description":
-            "Attend our traditional weekly Won Buddhist Service where we practice chanting, pray for world peace, read the Scriptures, perform Dharma talks, reflect on our past weeks graces and trials, and practice silent meditation together."
+            "Attend our traditional weekly Won Buddhist Service where we practice chanting, pray for world peace, read the Scriptures, perform Dharma talks, reflect on our past weeks graces and trials, and practice silent meditation together. This service will be held in Korean."
+        },
+        {
+          "active": true,
+          "day": "Sunday",
+          "times": "3:00pm - 4:15pm",
+          "title": "Won Buddhism English Service",
+          "description":
+            "Attend our traditional weekly Won Buddhist Service where we practice chanting, pray for world peace, read the Scriptures, perform Dharma talks, reflect on our past weeks graces and trials, and practice silent meditation together. This service will be held in English."
         }
       ]
     },
