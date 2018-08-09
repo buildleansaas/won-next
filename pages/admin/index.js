@@ -73,6 +73,23 @@ export default class Home extends Component {
             <li>
               <Link href="/">{header.home}</Link>
             </li>
+
+            <li>
+              <button
+                className="no-button"
+                onClick={() => {
+                  this.changeState("locale", locale === "en" ? "kr" : "en");
+                }}
+              >
+                <img
+                  className="flag"
+                  src={locale === "en" ? "/static/usa.png" : "/static/sk.png"}
+                  alt={`Flag for the country of ${
+                    locale === "en" ? "America" : "South Korea"
+                  }`}
+                />
+              </button>
+            </li>
           </ul>
         </nav>
 

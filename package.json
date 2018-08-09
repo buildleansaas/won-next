@@ -8,12 +8,13 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "dev": "next",
-    "start": "next start -p $PORT",
+    "dev": "node server.js",
+    "start": "NODE_ENV=production node server.js",
     "heroku-postbuild": "next build"
   },
   "dependencies": {
     "@zeit/next-css": "^0.1.5",
+    "express": "^4.16.3",
     "next": "^5.1.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",

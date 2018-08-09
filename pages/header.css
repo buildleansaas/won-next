@@ -14,10 +14,6 @@ nav {
   padding: 12px 24px 24px 24px;
 }
 
-.header-links.thin {
-  padding: 12px;
-}
-
 @media (max-width: 768px) {
   .header-links {
     text-align: center;
@@ -37,9 +33,14 @@ nav {
 
 .header-links .flag,
 .header-links .gear {
+  cursor: pointer;
   width: 30px;
   position: relative;
   top: 10px;
+}
+
+.header-links .gear {
+  width: 28px;
 }
 
 .header-links a {
