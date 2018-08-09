@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ScrollableAnchor, { configureAnchors } from "react-scrollable-anchor";
 import Head from "next/head";
+import Link from "next/link";
 
 import Introduction from "../components/sections/Home/Introduction/";
 import Activities from "../components/sections/Home/Activities/";
@@ -73,6 +74,15 @@ export default class Home extends Component {
                     }`}
                   />
                 </button>
+              </li>
+              <li>
+                <Link href="/admin">
+                  <img
+                    className="gear"
+                    src="/static/gear.png"
+                    alt="Gear icon for administration panel"
+                  />
+                </Link>
               </li>
             </ul>
           </nav>
