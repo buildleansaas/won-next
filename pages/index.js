@@ -39,7 +39,7 @@ export default class Home extends Component {
 
   render() {
     const { locale } = this.state;
-    const { header, intro, info, about, footer } = t[locale];
+    const { special, header, intro, info, about, footer } = t[locale];
 
     return (
       <ScrollableAnchor id={"home"}>
@@ -47,6 +47,7 @@ export default class Home extends Component {
           <Head>
             <title>Home | Won Buddhism of Richmond</title>
           </Head>
+          <div className="address-change-info">{special.move}</div>
           <nav>
             <ul className="header-links">
               <li>
