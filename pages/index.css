@@ -147,3 +147,27 @@ p.no-items {
   font-size: 120%;
   padding-bottom: 16px;
 }
+
+.special-notice-banner {
+  z-index: 1000;
+  position: fixed;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: #ffd700;
+}
+
+.special-notice-banner p {
+  font-size: 80%;
+  text-align: center;
+}
+
+.special-notice-banner .button-link {
+  background: #222;
+  color: #ffd700;
+}
+
+.special-notice-banner .button-link:hover {
+  color: #222;
+  background: white;
+}
