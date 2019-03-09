@@ -6,28 +6,48 @@ import "./slider.css";
 const images = [
   {
     alt: "the temple reverendes Kim and Diane",
-    number: 0
+    number: 0,
   },
   {
     alt: "the temple reverendes Kim and Diane",
-    number: 1
+    number: 1,
   },
   {
     alt: "a view of the driveway",
-    number: 3
+    number: 3,
   },
   {
     alt: "a look inside the temple",
-    number: 5
+    number: 5,
   },
   {
     alt: "welcome to the temple!",
-    number: 6
+    number: 6,
   },
   {
     alt: "a look of the driveway approaching the temple",
-    number: 7
-  }
+    number: 7,
+  },
+  {
+    alt: "Kim, Diane and Chuck taking a rest after envigorating Tai Chi!",
+    number: 8,
+  },
+  {
+    alt: "Helping hands taking care of our beautiful grounds!",
+    number: 9,
+  },
+  {
+    alt: "Kim Kyomunim!",
+    number: 10,
+  },
+  {
+    alt: "Our temple is beautiful in the Fall, and all year around!",
+    number: 11,
+  },
+  {
+    alt: "Boys and girls youth from Korea come stay, learn about America!",
+    number: 12,
+  },
 ];
 
 function shuffle(a) {
@@ -47,7 +67,7 @@ export default function Carousel() {
     slidesToScroll: 1,
     arrows: false,
     autoplay: true,
-    adaptiveHeight: true
+    adaptiveHeight: true,
   };
 
   return (
