@@ -14,20 +14,20 @@ export default function About({ about }) {
           <div className="Home-about-info inner-wrapper flex-info">
             <div className="Home-about-info-text">
               <h3>{about.title}</h3>
-              {about.about_paragraphs.map((p, i) => <p key={i}>{p}</p>)}
+              {about.about_paragraphs.map((p, i) => (
+                <p key={i}>{p}</p>
+              ))}
               <p className="button-link-container-flex">
                 <a
                   about="_blank"
                   href="mailto:richmond-va@wonbuddhism.org?Interest in Won-Buddhism Richmond Temple"
-                  className="button-link"
-                >
+                  className="button-link">
                   Email Us Today
                 </a>
                 <a
                   about="_blank"
-                  href="https://www.google.com/maps/@37.6179084,-77.3496596,15z"
-                  className="button-link"
-                >
+                  href="https://www.google.com/maps/place/Won+Buddhism+of+Richmond+Inc/@37.629929,-77.2996487,17z/data=!3m1!4b1!4m5!3m4!1s0x89b1234210dc55c9:0x1aa8a4363049ebf5!8m2!3d37.629929!4d-77.29746"
+                  className="button-link">
                   Visit Our Location
                 </a>
               </p>
@@ -43,34 +43,32 @@ export default function About({ about }) {
           <div className="inner-wrapper flex-info">
             <div>
               <h3>{about.subtitle}</h3>
-              {about.about_won_paragraphs.map((p, i) => <p key={i}>{p}</p>)}
+              {about.about_won_paragraphs.map((p, i) => (
+                <p key={i}>{p}</p>
+              ))}
               <div className="button-link-container-flex">
                 <a
                   about="_blank"
                   href="http://www.wonbuddhism.org/#/what-is-won-buddhism"
-                  className="button-link"
-                >
+                  className="button-link">
                   More About Won-Buddhism
                 </a>
                 <a
                   about="_blank"
                   href="http://www.wonbuddhism.org/#/il-won-sang"
-                  className="button-link"
-                >
+                  className="button-link">
                   Our Teachings
                 </a>
                 <a
                   about="_blank"
                   href="http://www.wonbuddhism.org/#/timeless-zen"
-                  className="button-link"
-                >
+                  className="button-link">
                   How to Practice
                 </a>
                 <a
                   about="_blank"
                   href="http://www.wonbuddhism.org/#/resource"
-                  className="button-link"
-                >
+                  className="button-link">
                   Main Writings
                 </a>
               </div>
