@@ -11,13 +11,13 @@ import "./index.css";
 export default class Home extends Component {
   state = {
     locale: "en",
-    loading: true
+    loading: true,
   };
 
   componentDidMount() {
     if (typeof window !== "undefined") {
       const localStorageState = JSON.parse(
-        window.localStorage.getItem("won-rva")
+        window.localStorage.getItem("won-rva"),
       );
 
       if (typeof localStorageState === "object") {
@@ -28,7 +28,7 @@ export default class Home extends Component {
 
   changeState = (key, value) => {
     this.setState({ [key]: value }, () =>
-      window.localStorage.setItem("won-rva", JSON.stringify(this.state))
+      window.localStorage.setItem("won-rva", JSON.stringify(this.state)),
     );
   };
 
@@ -52,8 +52,7 @@ export default class Home extends Component {
                 className="no-button"
                 onClick={() => {
                   this.changeState("locale", locale === "en" ? "kr" : "en");
-                }}
-              >
+                }}>
                 <img
                   className="flag"
                   src={locale === "en" ? "/static/usa.png" : "/static/sk.png"}
@@ -100,13 +99,12 @@ export default class Home extends Component {
                         </h4>
                         <p>{description}</p>
                         <a
-                          href={`mailto:${registration}?subject=${title} registration`}
-                        >
+                          href={`mailto:${registration}?subject=${title} registration`}>
                           {info.button_more_info}
                         </a>{" "}
-                        {info.call_option} (804)-325-5760.
+                        {info.call_option} (804)-243-5878.
                       </div>
-                    )
+                    ),
                   )}
               </div>
             )}

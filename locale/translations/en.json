@@ -1,92 +1,92 @@
 {
-	"special": {
-		"move": "A few years ago we moved from Chesterfield to Mechanicsville. Make sure you are coming to the right location! Looking forward to seeing you soon."
-	},
-	"header": {
-		"home": "Home",
-		"activities": "Activities",
-		"contact": "Contact",
-		"about": "About"
-	},
-	"intro": {
-		"title": "Won-Buddhism of Richmond",
-		"subtitle": "With this Great Opening of Material, let there be a Great Opening of Spirit."
-	},
-	"info": {
-		"programs": {
-			"title": "Ongoing Programs",
-			"items": [
-				{
-					"active": true,
-					"day": "Monday",
-					"times": "6:30pm - 7:30pm",
-					"title": "Tai Chi at the Mechanicsville Library",
-					"description": "Join us at the Tai Chi is meditation in movement. Its soft movements create flows of energy that cultivate your physical and inner strength. In this class, learn about the energy of Yin and Yang to bring health, stability and vitality into your life. Friendly for all ages."
-				},
-				{
-					"active": true,
-					"day": "Tuesday",
-					"times": "10:30am - 11:30am",
-					"title": "Breathing and Chanting Meditation",
-					"description": "Breathing Meditation focuses on balancing the body and mind by following the breath. Every moment of every day, we rely on our breath without consciously tapping into the that source of Univesral Power. Chanting Meditation vibrates powerful meaning into the Universe around us, focuses the mind, and creates energetic calm in the body and Soul."
-				},
-				{
-					"active": true,
-					"day": "Thursday",
-					"times": "2:00pm - 3:30pm",
-					"title": "Tai Chi",
-					"description": "Tai Chi is meditation in movement. Its soft movements create flows of energy that cultivate your physical and inner strength. In this class, learn about the energy of Yin and Yang to bring health, stability and vitality into your life. Friendly for all ages."
-				},
-				{
-					"active": true,
-					"day": "Every Morning",
-					"times": "6:00am - 7:15am",
-					"title": "Group Meditation",
-					"description": "This morning group meditation is based on the Mindfulness Meditation above, but is enhanced by the mornings silent universal energies. The freshness cultivated in this mindful morning practice will last all day."
-				},
-				{
-					"active": true,
-					"day": "Sunday",
-					"times": "10:3pm - 11:45pm",
-					"title": "Won Buddhism Korean Service",
-					"description": "Attend our traditional weekly Won Buddhist Service where we practice chanting, pray for world peace, read the Scriptures, perform Dharma talks, reflect on our past weeks graces and trials, and practice silent meditation together. This service will be held in Korean."
-				},
-				{
-					"active": true,
-					"day": "Sunday",
-					"times": "3:00pm - 4:15pm",
-					"title": "Won Buddhism English Service",
-					"description": "Attend our traditional weekly Won Buddhist Service where we practice chanting, pray for world peace, read the Scriptures, perform Dharma talks, reflect on our past weeks graces and trials, and practice silent meditation together. This service will be held in English."
-				}
-			]
-		},
-		"upcoming": {
-			"title": "Upcoming Events",
-			"items": []
-		},
-		"button_future": "See All Future Events",
-		"button_more_info": "More Info by Email",
-		"call_option": "or call",
-		"donations": {
-			"intro": "There are no fees for our programs, however, the temple is fully self-supporting and any level of donations are much appreciated!",
-			"paypal_button": "Donate via Paypal",
-			"check": "Or make a check payable to Won Buddhism of Richmond. This can be sent to our address at Won Buddhism of Richmond 8266 Walnut Grove Rd. Mechanicsville, VA 23111."
-		}
-	},
-	"about": {
-		"title": "About Our Temple",
-		"about_paragraphs": [
-			"Welcome to the Won Buddhism Temple of Richmond. Won Buddhism of Richmond has served since 1999, as a spiritual home for Richmond. It is a place of peace and restoration, and a place to learn and practice Won Buddhism and meditation. We welcome everyone who wants to cultivate inner peace, joy and wisdom.",
-			"No experience is necessary. There are no fees for our programs, however, the temple is fully self-supporting and any level of donations are much appreciated. Please join us!"
-		],
-		"subtitle": "About Won-Buddhism",
-		"about_won_paragraphs": [
-			"Won-Buddhism, a reformed and modernized Buddhism, teaches us how to use our minds. To use the mind well, we should first know what the mind is like and how it works. Based on that understanding, we should cultivate and use it skillfully in everyday situations.",
-			"Whether a one-hundred dollar bill is crisp or crumpled, it has the same value. Our original mind is pure, bright, and wholesome, lacking nothing.",
-			"Everyone has a mind and is constantly using it."
-		]
-	},
-	"footer": {
-		"copyright": "Copyright © 2014 Won Buddhism of U.S.A., Inc. All rights reserved."
-	}
+  "special": {
+    "move": "A few years ago we moved from Chesterfield to Mechanicsville. Make sure you are coming to the right location! Looking forward to seeing you soon."
+  },
+  "header": {
+    "home": "Home",
+    "activities": "Activities",
+    "contact": "Contact",
+    "about": "About"
+  },
+  "intro": {
+    "title": "Won-Buddhism of Richmond",
+    "subtitle": "With this Great Opening of Material, let there be a Great Opening of Spirit."
+  },
+  "info": {
+    "programs": {
+      "title": "Ongoing Programs",
+      "items": [
+        {
+          "active": true,
+          "day": "Monday",
+          "times": "6:30pm - 7:30pm",
+          "title": "Tai Chi at the Mechanicsville Library",
+          "description": "Join us at the Tai Chi is meditation in movement. Its soft movements create flows of energy that cultivate your physical and inner strength. In this class, learn about the energy of Yin and Yang to bring health, stability and vitality into your life. Friendly for all ages."
+        },
+        {
+          "active": true,
+          "day": "Thursday",
+          "times": "10:30am - 12:00am",
+          "title": "Breathing and Chanting Meditation",
+          "description": "Breathing Meditation focuses on balancing the body and mind by following the breath. Every moment of every day, we rely on our breath without consciously tapping into the that source of Univesral Power. Chanting Meditation vibrates powerful meaning into the Universe around us, focuses the mind, and creates energetic calm in the body and Soul."
+        },
+        {
+          "active": true,
+          "day": "Thursday",
+          "times": "2:00pm - 3:30pm",
+          "title": "Tai Chi",
+          "description": "Tai Chi is meditation in movement. Its soft movements create flows of energy that cultivate your physical and inner strength. In this class, learn about the energy of Yin and Yang to bring health, stability and vitality into your life. Friendly for all ages."
+        },
+        {
+          "active": true,
+          "day": "Every Morning",
+          "times": "6:00am - 7:15am",
+          "title": "Group Meditation",
+          "description": "This morning group meditation is based on the Mindfulness Meditation above, but is enhanced by the mornings silent universal energies. The freshness cultivated in this mindful morning practice will last all day."
+        },
+        {
+          "active": true,
+          "day": "Sunday",
+          "times": "10:3pm - 11:45pm",
+          "title": "Won Buddhism Korean Service",
+          "description": "Attend our traditional weekly Won Buddhist Service where we practice chanting, pray for world peace, read the Scriptures, perform Dharma talks, reflect on our past weeks graces and trials, and practice silent meditation together. This service will be held in Korean."
+        },
+        {
+          "active": true,
+          "day": "Sunday",
+          "times": "3:30pm - 5:00pm",
+          "title": "Won Buddhism English Service",
+          "description": "Attend our traditional weekly Won Buddhist Service where we practice chanting, pray for world peace, read the Scriptures, perform Dharma talks, reflect on our past weeks graces and trials, and practice silent meditation together. This service will be held in English."
+        }
+      ]
+    },
+    "upcoming": {
+      "title": "Upcoming Events",
+      "items": []
+    },
+    "button_future": "See All Future Events",
+    "button_more_info": "More Info by Email",
+    "call_option": "or call",
+    "donations": {
+      "intro": "There are no fees for our programs, however, the temple is fully self-supporting and any level of donations are much appreciated!",
+      "paypal_button": "Donate via Paypal",
+      "check": "Or make a check payable to Won Buddhism of Richmond. This can be sent to our address at Won Buddhism of Richmond 8266 Walnut Grove Rd. Mechanicsville, VA 23111."
+    }
+  },
+  "about": {
+    "title": "About Our Temple",
+    "about_paragraphs": [
+      "Welcome to the Won Buddhism Temple of Richmond. Won Buddhism of Richmond has served since 1999, as a spiritual home for Richmond. It is a place of peace and restoration, and a place to learn and practice Won Buddhism and meditation. We welcome everyone who wants to cultivate inner peace, joy and wisdom.",
+      "No experience is necessary. There are no fees for our programs, however, the temple is fully self-supporting and any level of donations are much appreciated. Please join us!"
+    ],
+    "subtitle": "About Won-Buddhism",
+    "about_won_paragraphs": [
+      "Won-Buddhism, a reformed and modernized Buddhism, teaches us how to use our minds. To use the mind well, we should first know what the mind is like and how it works. Based on that understanding, we should cultivate and use it skillfully in everyday situations.",
+      "Whether a one-hundred dollar bill is crisp or crumpled, it has the same value. Our original mind is pure, bright, and wholesome, lacking nothing.",
+      "Everyone has a mind and is constantly using it."
+    ]
+  },
+  "footer": {
+    "copyright": "Copyright © 2014 Won Buddhism of U.S.A., Inc. All rights reserved."
+  }
 }

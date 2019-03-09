@@ -55,13 +55,12 @@ export default function Activities({ info }) {
                         </h4>
                         <p>{description}</p>
                         <a
-                          href={`mailto:${registration}?subject=${title} registration`}
-                        >
+                          href={`mailto:${registration}?subject=${title} registration`}>
                           {info.button_more_info}
                         </a>{" "}
-                        {info.call_option} (804)-325-5760.
+                        {info.call_option} (804)-243-5878.
                       </div>
-                    )
+                    ),
                   )}
               </div>
             )}
@@ -85,8 +84,7 @@ export default function Activities({ info }) {
           <p>
             <a
               href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZHRPK4RDFN7T6"
-              className="button-link"
-            >
+              className="button-link">
               {info.donations.paypal_button}
             </a>
           </p>
