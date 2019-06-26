@@ -14,7 +14,7 @@ import t from "../locale";
 
 export default class Home extends Component {
   state = {
-    locale: "en"
+    locale: "en",
   };
 
   componentDidMount() {
@@ -22,7 +22,7 @@ export default class Home extends Component {
 
     if (typeof window !== "undefined") {
       const localStorageState = JSON.parse(
-        window.localStorage.getItem("won-rva")
+        window.localStorage.getItem("won-rva"),
       );
 
       if (typeof localStorageState === "object") {
@@ -33,7 +33,7 @@ export default class Home extends Component {
 
   changeState = (key, value) => {
     this.setState({ [key]: value }, () =>
-      window.localStorage.setItem("won-rva", JSON.stringify(this.state))
+      window.localStorage.setItem("won-rva", JSON.stringify(this.state)),
     );
   };
 
@@ -63,8 +63,7 @@ export default class Home extends Component {
                   className="no-button"
                   onClick={() => {
                     this.changeState("locale", locale === "en" ? "kr" : "en");
-                  }}
-                >
+                  }}>
                   <img
                     className="flag"
                     src={locale === "en" ? "/static/usa.png" : "/static/sk.png"}
@@ -91,8 +90,7 @@ export default class Home extends Component {
               <a
                 about="_blank"
                 href="https://www.google.com/maps/@37.6179084,-77.3496596,15z"
-                className="button-link"
-              >
+                className="button-link">
                 Visit Our Location!
               </a>
             </p>

@@ -19,50 +19,58 @@
         {
           "active": true,
           "day": "Monday",
-          "times": "6:30pm - 7:30pm",
-          "title": "Tai Chi at the Mechanicsville Library",
+          "times": "6:00pm - 7:30pm",
+          "title": "Tai Chi",
           "description": "Join us at the Tai Chi is meditation in movement. Its soft movements create flows of energy that cultivate your physical and inner strength. In this class, learn about the energy of Yin and Yang to bring health, stability and vitality into your life. Friendly for all ages."
         },
         {
-          "active": true,
+          "active": false,
           "day": "Thursday",
           "times": "10:30am - 12:00am",
-          "title": "Breathing and Chanting Meditation",
+          "title": "Breathing and Energy Cultivation Meditation",
           "description": "Breathing Meditation focuses on balancing the body and mind by following the breath. Every moment of every day, we rely on our breath without consciously tapping into the that source of Univesral Power. Chanting Meditation vibrates powerful meaning into the Universe around us, focuses the mind, and creates energetic calm in the body and Soul."
         },
         {
           "active": true,
           "day": "Thursday",
-          "times": "12:30pm - 2:00pm",
-          "title": "Tai Chi",
-          "description": "Tai Chi is meditation in movement. Its soft movements create flows of energy that cultivate your physical and inner strength. In this class, learn about the energy of Yin and Yang to bring health, stability and vitality into your life. Friendly for all ages."
+          "times": "1:00pm - 3:30pm",
+          "title": "Breathing and Energy Cultivation Meditation",
+          "description": "Breathing Meditation focuses on balancing the body and mind by following the breath. Every moment of every day, we rely on our breath without consciously tapping into the that source of Univesral Power. Chanting Meditation vibrates powerful meaning into the Universe around us, focuses the mind, and creates energetic calm in the body and Soul."
         },
         {
-          "active": true,
+          "active": false,
           "day": "Every Morning",
           "times": "6:00am - 7:15am",
           "title": "Group Meditation",
           "description": "This morning group meditation is based on the Mindfulness Meditation above, but is enhanced by the mornings silent universal energies. The freshness cultivated in this mindful morning practice will last all day."
         },
         {
-          "active": true,
+          "active": false,
           "day": "Sunday",
-          "times": "10:30pm - 12:00pm",
+          "times": "10:3pm - 11:45pm",
           "title": "Won Buddhism Korean Service",
           "description": "Attend our traditional weekly Won Buddhist Service where we practice chanting, pray for world peace, read the Scriptures, perform Dharma talks, reflect on our past weeks graces and trials, and practice silent meditation together. This service will be held in Korean."
         },
         {
           "active": true,
-          "day": "Sunday",
+          "day": "Saturday",
           "times": "10:30pm - 12:00pm",
-          "title": "Won Buddhism English Service",
+          "title": "Won Buddhism Traditional Service",
           "description": "Attend our traditional weekly Won Buddhist Service where we practice chanting, pray for world peace, read the Scriptures, perform Dharma talks, reflect on our past weeks graces and trials, and practice silent meditation together. This service will be held in English."
         }
       ]
     },
     "upcoming": {
       "title": "Upcoming Events",
-      "items": []
+      "items": [
+        {
+          "start": "July 1",
+          "end": "August 31",
+          "title": "Adult Summer Camp - Chi (Energy) and Meditation Workshop",
+          "description": "Come and experience of cultivation of Life Force Energy (Qi) with QiGong and Tai Chi and Deep Peaceful Stillness with Meditation at the Won Buddhism Temple of Richmond. Times for Classes can be seen in the 'Ongoing Programs' list! Classes will not be held on July 15, 18, 20, or August 12, 16, 17, and 19th. Looking forward to seeing you!",
+          "registration": "picacho10000@gmail.com"
+        }
+      ]
     },
     "button_future": "See All Future Events",
     "button_more_info": "More Info by Email",

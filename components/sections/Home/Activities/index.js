@@ -32,7 +32,7 @@ export default function Activities({ info }) {
           </div>
           <div className="Home-info-upcoming">
             <h3>{info.upcoming.title}</h3>
-            {info.upcoming.items.length === 0 ? (
+            {info.upcoming.items.length <= 0 ? (
               <p className="no-items">
                 Currently there are no upcoming events, we hope to populate this
                 list shortly!
