@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import ScrollableAnchor, { configureAnchors } from "react-scrollable-anchor";
 import Head from "next/head";
+import sanity from "../lib/sanity"
+
+import { getSchedule } from "../api/schedule"
+import { getEvents } from "../api/events"
 
 import Introduction from "../components/sections/Home/Introduction/";
 import Activities from "../components/sections/Home/Activities/";
@@ -12,12 +16,21 @@ import "./header.css";
 
 import t from "../locale";
 
-export default class Home extends Component {
+
+class Home extends Component {
   state = {
     locale: "en",
+    schedule: [],
+    events: []
   };
 
-  componentDidMount() {
+  changeState = (key, value) => {
+    this.setState({ [key]: value }, () =>
+      window.localStorage.setItem("won-rva", JSON.stringify(this.state)),
+    );
+  };
+
+  async componentDidMount() {
     configureAnchors({ offset: -116, scrollDuration: 400 });
 
     if (typeof window !== "undefined") {
@@ -31,15 +44,9 @@ export default class Home extends Component {
     }
   }
 
-  changeState = (key, value) => {
-    this.setState({ [key]: value }, () =>
-      window.localStorage.setItem("won-rva", JSON.stringify(this.state)),
-    );
-  };
-
   render() {
-    const { locale } = this.state;
-    const { special, header, intro, info, about, footer } = t[locale];
+    const { locale, schedule, events } = this.state;
+    const { special, header, intro, about, footer } = t[locale];
 
     return (
       <ScrollableAnchor id={"home"}>
@@ -58,7 +65,7 @@ export default class Home extends Component {
               <li>
                 <a href="#about">{header.about}</a>
               </li>
-              <li>
+              {/* <li>
                 <button
                   className="no-button"
                   onClick={() => {
@@ -69,10 +76,10 @@ export default class Home extends Component {
                     src={locale === "en" ? "/static/usa.png" : "/static/sk.png"}
                     alt={`Flag for the country of ${
                       locale === "en" ? "America" : "South Korea"
-                    }`}
+                      }`}
                   />
                 </button>
-              </li>
+              </li> */}
             </ul>
           </nav>
 
@@ -82,7 +89,7 @@ export default class Home extends Component {
             locale={locale}
             changeState={this.changeState}
           />
-          <Activities info={info} />
+          <Activities schedule={schedule} events={events} />
           <About about={about} />
           <div className="special-notice-banner">
             <p>{special.move}</p>
@@ -101,3 +108,12 @@ export default class Home extends Component {
     );
   }
 }
+
+Home.getInitialProps = async function () {
+  return {
+    events: await sanity.fetch(getEvents),
+    schedule: await sanity.fetch(getSchedule)
+  }
+}
+
+export default Home;

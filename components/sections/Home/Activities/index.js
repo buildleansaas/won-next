@@ -4,69 +4,42 @@ import Link from "next/link";
 
 import "./index.css";
 
-export default function Activities({ info }) {
+export default function Activities({ events, schedule }) {
+  console.log(events, schedule)
   return (
     <ScrollableAnchor id={"activities"}>
       <div className="Home-info inner-wrapper">
         <div className="flex-info">
           <div className="Home-info-programs">
-            <h3>{info.programs.title}</h3>
+            <h3>Weekly Schedule</h3>
             <div className="Home-info-items">
-              {info.programs.items
-                .filter(({ active }) => active)
-                .map(({ day, times, title, description }, i) => (
-                  <div key={i} className="Home-info-item">
-                    <h4 className="Home-info-item-title">
-                      {title}
-                      <br />
-                      <small>
-                        <strong>
-                          {day} @ {times}
-                        </strong>
-                      </small>
-                    </h4>
-                    <p>{description}</p>
+              {schedule.items ? (
+                <p className="no-items">
+                  Schedule is loading...
+              </p>
+              ) : (
+                  <div className="Home-info-items">
+
                   </div>
-                ))}
+                )}
             </div>
           </div>
           <div className="Home-info-upcoming">
-            <h3>{info.upcoming.title}</h3>
-            {info.upcoming.items.length <= 0 ? (
+            <h3>Upcoming Workshops</h3>
+            {events.items ? (
               <p className="no-items">
                 Currently there are no upcoming events, we hope to populate this
                 list shortly!
               </p>
             ) : (
-              <div className="Home-info-items">
-                {info.upcoming.items
-                  .slice(0, 3)
-                  .map(
-                    ({ start, end, title, description, registration }, i) => (
-                      <div key={i} className="Home-info-item">
-                        <h4 className="Home-info-item-title">
-                          {title}
-                          <br />
-                          <small>
-                            <strong>
-                              {start} - {end}
-                            </strong>
-                          </small>
-                        </h4>
-                        <p>{description}</p>
-                        <a
-                          href={`mailto:${registration}?subject=${title} registration`}>
-                          {info.button_more_info}
-                        </a>{" "}
-                        {info.call_option} (804)-243-5878.
-                      </div>
-                    ),
-                  )}
-              </div>
-            )}
+                <div className="Home-info-items">
+
+                </div>
+              )
+            }
             <p>
               <Link href="/all-events">
-                <span className="button-link">{info.button_future}</span>
+                <span className="button-link">See Future Events</span>
               </Link>
             </p>
           </div>
@@ -74,21 +47,12 @@ export default function Activities({ info }) {
         <hr className="divider" />
         <div className="donation-information">
           <p>
-            {info.donations.intro}{" "}
-            <img
-              className="emoji"
-              src={"/static/pray.png"}
-              alt="hands clasped in prayer"
-            />
-          </p>
-          <p>
             <a
               href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZHRPK4RDFN7T6"
               className="button-link">
-              {info.donations.paypal_button}
+              Donate Via PayPal
             </a>
           </p>
-          <p style={{ fontSize: 16, marginTop: 24 }}>{info.donations.check}</p>
         </div>
       </div>
     </ScrollableAnchor>
