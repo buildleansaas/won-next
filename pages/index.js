@@ -111,8 +111,8 @@ class Home extends Component {
 
 Home.getInitialProps = async function () {
   return {
-    events: await sanity.fetch(getEvents),
-    schedule: await sanity.fetch(getSchedule)
+    events: await sanity.fetch("*[0]"),
+    schedule: await sanity.fetch("*[0]")
   }
 }
 
