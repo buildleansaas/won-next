@@ -2,93 +2,128 @@ import React from "react";
 import ScrollableAnchor from "react-scrollable-anchor";
 import Link from "next/link";
 
+import moment from "moment";
+
 import "./index.css";
 
-export default function Activities({ info }) {
+export default function Activities({ events, schedule }) {
+  const liveEvents = events.filter(event => {
+    if (event.active) {
+      return event;
+    }
+  }) || [];
+  const liveSchedule = schedule.filter(schedule => {
+    if (schedule.active) {
+      return schedule;
+    }
+  }) || [];
+
   return (
     <ScrollableAnchor id={"activities"}>
       <div className="Home-info inner-wrapper">
         <div className="flex-info">
           <div className="Home-info-programs">
-            <h3>{info.programs.title}</h3>
+            <h3>Weekly Schedule</h3>
             <div className="Home-info-items">
-              {info.programs.items
-                .filter(({ active }) => active)
-                .map(({ day, times, title, description }, i) => (
-                  <div key={i} className="Home-info-item">
-                    <h4 className="Home-info-item-title">
-                      {title}
-                      <br />
-                      <small>
-                        <strong>
-                          {day} @ {times}
-                        </strong>
-                      </small>
-                    </h4>
-                    <p>{description}</p>
+              {liveSchedule.items ? (
+                <p className="no-items">Schedule is loading...</p>
+              ) : (
+                  <div className="Home-info-items">
+                    {liveSchedule.map(schedule => (
+                      <div className="Home-info-item" key={schedule._id}>
+                        <h4>{schedule.title}</h4>
+                        <p>{schedule.description}</p>
+                        <p>Timeslots:</p>
+                        <ul>{schedule.timeslots.map(timeslot => <li><strong>{timeslot.day}, {timeslot.startTime}, {timeslot.location.title}.</strong> {timeslot.endTime}</li>)}</ul>
+                        <div className="button-link-container-flex">
+                          <a
+                            about="_blank"
+                            href={schedule.moreInfo}
+                            className="button-link"
+                          >
+                            Get More Information
+                      </a>
+                          <a about="_blank" href="" className="button-link">
+                            Location
+                      </a>
+                          <a
+                            className="button-link"
+                            about="_blank"
+                            href={`mailto:rvawonbuddhism.org&subject=Interested in ${schedule.title}`}
+                          >
+                            More Information
+                      </a>
+                        </div>
+                      </div>
+                    ))}
                   </div>
-                ))}
+                )}
             </div>
           </div>
           <div className="Home-info-upcoming">
-            <h3>{info.upcoming.title}</h3>
-            {info.upcoming.items.length <= 0 ? (
+            <h3>Upcoming Events and Workshops!</h3>
+            {liveEvents.items ? (
               <p className="no-items">
                 Currently there are no upcoming events, we hope to populate this
                 list shortly!
               </p>
             ) : (
-              <div className="Home-info-items">
-                {info.upcoming.items
-                  .slice(0, 3)
-                  .map(
-                    ({ start, end, title, description, registration }, i) => (
-                      <div key={i} className="Home-info-item">
-                        <h4 className="Home-info-item-title">
-                          {title}
-                          <br />
-                          <small>
-                            <strong>
-                              {start} - {end}
-                            </strong>
-                          </small>
-                        </h4>
-                        <p>{description}</p>
+                <div className="Home-info-items">
+                  {liveEvents.map(event => (
+                    <div className="Home-info-item" key={event._id}>
+                      <h4>{event.title}</h4>
+                      <p>
+                        From{" "}
+                        <strong>
+                          {moment(event.eventBegin).format("dddd MMMM, Do, YYYY")}
+                        </strong>{" "}
+                        to{" "}
+                        <strong>
+                          {moment(event.eventEnd).format("dddd MMMM, Do, YYYY")}
+                        </strong>
+                      </p>
+                      <p>{event.description}</p>
+                      <div className="button-link-container-flex">
                         <a
-                          href={`mailto:${registration}?subject=${title} registration`}>
-                          {info.button_more_info}
-                        </a>{" "}
-                        {info.call_option} (804)-243-5878.
+                          about="_blank"
+                          href={event.moreInfo}
+                          className="button-link"
+                        >
+                          Get More Information
+                      </a>
+                        <a about="_blank" href="" className="button-link">
+                          Location
+                      </a>
+                        <a
+                          className="button-link"
+                          about="_blank"
+                          href={`mailto:rvawonbuddhism.org&subject=Interested in ${moment(
+                            event.eventBegin
+                          ).format("MMMM")} ${event.title}`}
+                        >
+                          Sign Up
+                      </a>
                       </div>
-                    ),
-                  )}
-              </div>
-            )}
-            <p>
-              <Link href="/all-events">
-                <span className="button-link">{info.button_future}</span>
-              </Link>
-            </p>
+                    </div>
+                  ))}
+                </div>
+              )}
           </div>
         </div>
         <hr className="divider" />
         <div className="donation-information">
           <p>
-            {info.donations.intro}{" "}
-            <img
-              className="emoji"
-              src={"/static/pray.png"}
-              alt="hands clasped in prayer"
-            />
+            There are no fees for our programs, however, the temple is fully
+            self-supporting and any level of donations are much appreciated!
           </p>
           <p>
             <a
               href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZHRPK4RDFN7T6"
-              className="button-link">
-              {info.donations.paypal_button}
+              className="button-link"
+            >
+              🙏 Donate Via PayPal 🙏
             </a>
           </p>
-          <p style={{ fontSize: 16, marginTop: 24 }}>{info.donations.check}</p>
         </div>
       </div>
     </ScrollableAnchor>

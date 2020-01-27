@@ -14,6 +14,9 @@ p.no-items {
 
 .Home-info-item {
   max-width: 728px;
+  padding: 1rem;
+  margin: 1rem auto;
+  border: 4px solid #ffd700;
 }
 
 .Home-info-item h4 {
