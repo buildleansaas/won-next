@@ -20,8 +20,6 @@ import t from "../locale";
 class Home extends Component {
   state = {
     locale: "en",
-    schedule: [],
-    events: []
   };
 
   changeState = (key, value) => {
@@ -45,7 +43,8 @@ class Home extends Component {
   }
 
   render() {
-    const { locale, schedule, events } = this.state;
+    const { events, schedule } = this.props
+    const { locale } = this.state;
     const { special, header, intro, about, footer } = t[locale];
 
     return (
@@ -91,17 +90,6 @@ class Home extends Component {
           />
           <Activities schedule={schedule} events={events} />
           <About about={about} />
-          <div className="special-notice-banner">
-            <p>{special.move}</p>
-            <p>
-              <a
-                about="_blank"
-                href="https://www.google.com/maps/@37.6179084,-77.3496596,15z"
-                className="button-link">
-                Visit Our Location!
-              </a>
-            </p>
-          </div>
           <Footer footer={footer} />
         </div>
       </ScrollableAnchor>
@@ -111,8 +99,8 @@ class Home extends Component {
 
 Home.getInitialProps = async function () {
   return {
-    events: await sanity.fetch("*[0]"),
-    schedule: await sanity.fetch("*[0]")
+    events: await sanity.fetch(getEvents),
+    schedule: await sanity.fetch(getSchedule)
   }
 }
 

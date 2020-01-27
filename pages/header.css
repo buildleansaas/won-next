@@ -11,7 +11,7 @@ nav {
   list-style: none;
   text-align: right;
   margin: 0;
-  padding: 12px 24px 24px 24px;
+  padding: 2rem;
 }
 
 @media (max-width: 768px) {
