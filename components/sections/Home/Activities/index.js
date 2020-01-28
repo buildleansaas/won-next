@@ -7,16 +7,18 @@ import moment from "moment";
 import "./index.css";
 
 export default function Activities({ events, schedule }) {
-  const liveEvents = events.filter(event => {
-    if (event.active) {
-      return event;
-    }
-  }) || [];
-  const liveSchedule = schedule.filter(schedule => {
-    if (schedule.active) {
-      return schedule;
-    }
-  }) || [];
+  const liveEvents =
+    events.filter(event => {
+      if (event.active) {
+        return event;
+      }
+    }) || [];
+  const liveSchedule =
+    schedule.filter(schedule => {
+      if (schedule.active) {
+        return schedule;
+      }
+    }) || [];
 
   return (
     <ScrollableAnchor id={"activities"}>
@@ -28,36 +30,40 @@ export default function Activities({ events, schedule }) {
               {liveSchedule.items ? (
                 <p className="no-items">Schedule is loading...</p>
               ) : (
-                  <div className="Home-info-items">
-                    {liveSchedule.map(schedule => (
-                      <div className="Home-info-item" key={schedule._id}>
-                        <h4>{schedule.title}</h4>
-                        <p>{schedule.description}</p>
-                        <p>Timeslots:</p>
-                        <ul>{schedule.timeslots.map(timeslot => <li><strong>{timeslot.day}, {timeslot.startTime}, {timeslot.location.title}.</strong> {timeslot.endTime}</li>)}</ul>
-                        <div className="button-link-container-flex">
-                          <a
-                            about="_blank"
-                            href={schedule.moreInfo}
-                            className="button-link"
-                          >
-                            Get More Information
-                      </a>
-                          <a about="_blank" href="" className="button-link">
-                            Location
-                      </a>
-                          <a
-                            className="button-link"
-                            about="_blank"
-                            href={`mailto:rvawonbuddhism.org&subject=Interested in ${schedule.title}`}
-                          >
-                            More Information
-                      </a>
-                        </div>
+                <div className="Home-info-items">
+                  {liveSchedule.map(schedule => (
+                    <div className="Home-info-item" key={schedule._id}>
+                      <h4>{schedule.title}</h4>
+                      <p>{schedule.description}</p>
+                      <p>Timeslots:</p>
+                      <ul>
+                        {schedule.timeslots.map(timeslot => (
+                          <li>
+                            <strong>{timeslot.day}</strong> from{" "}
+                            <strong>{timeslot.startTime}</strong> at the{" "}
+                            <a
+                              about="_blank"
+                              href={`https://www.google.com/maps/place/${timeslot.location.address}`}
+                            >
+                              {timeslot.location.title}
+                            </a>
+                            . {timeslot.endTime}
+                          </li>
+                        ))}
+                      </ul>
+                      <div className="button-link-container-flex">
+                        <a
+                          className="button-link"
+                          about="_blank"
+                          href={`mailto:rvawonbuddhism.org&subject=Interested in ${schedule.title}`}
+                        >
+                          More Information
+                        </a>
                       </div>
-                    ))}
-                  </div>
-                )}
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
           <div className="Home-info-upcoming">
@@ -68,46 +74,46 @@ export default function Activities({ events, schedule }) {
                 list shortly!
               </p>
             ) : (
-                <div className="Home-info-items">
-                  {liveEvents.map(event => (
-                    <div className="Home-info-item" key={event._id}>
-                      <h4>{event.title}</h4>
-                      <p>
-                        From{" "}
-                        <strong>
-                          {moment(event.eventBegin).format("dddd MMMM, Do, YYYY")}
-                        </strong>{" "}
-                        to{" "}
-                        <strong>
-                          {moment(event.eventEnd).format("dddd MMMM, Do, YYYY")}
-                        </strong>
-                      </p>
-                      <p>{event.description}</p>
-                      <div className="button-link-container-flex">
-                        <a
-                          about="_blank"
-                          href={event.moreInfo}
-                          className="button-link"
-                        >
-                          Get More Information
+              <div className="Home-info-items">
+                {liveEvents.map(event => (
+                  <div className="Home-info-item" key={event._id}>
+                    <h4>{event.title}</h4>
+                    <p>
+                      From{" "}
+                      <strong>
+                        {moment(event.eventBegin).format("dddd MMMM, Do, YYYY")}
+                      </strong>{" "}
+                      to{" "}
+                      <strong>
+                        {moment(event.eventEnd).format("dddd MMMM, Do, YYYY")}
+                      </strong>
+                    </p>
+                    <p>{event.description}</p>
+                    <div className="button-link-container-flex">
+                      <a
+                        about="_blank"
+                        href={event.moreInfo}
+                        className="button-link"
+                      >
+                        Get More Information
                       </a>
-                        <a about="_blank" href="" className="button-link">
-                          Location
+                      <a about="_blank" href="" className="button-link">
+                        Location
                       </a>
-                        <a
-                          className="button-link"
-                          about="_blank"
-                          href={`mailto:rvawonbuddhism.org&subject=Interested in ${moment(
-                            event.eventBegin
-                          ).format("MMMM")} ${event.title}`}
-                        >
-                          Sign Up
+                      <a
+                        className="button-link"
+                        about="_blank"
+                        href={`mailto:rvawonbuddhism.org&subject=Interested in ${moment(
+                          event.eventBegin
+                        ).format("MMMM")} ${event.title}`}
+                      >
+                        Sign Up
                       </a>
-                      </div>
                     </div>
-                  ))}
-                </div>
-              )}
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </div>
         <hr className="divider" />
