@@ -103,7 +103,7 @@ export default function Activities({ events, schedule }) {
                       <a
                         className="button-link"
                         target="_blank"
-                        href={`mailto:rvawonbuddhism.org&subject=Interested in ${moment(
+                        href={`mailto:richmond-va@wonbuddhism.org&subject=Interested in ${moment(
                           event.eventBegin
                         ).format("MMMM")} ${event.title}`}
                       >
