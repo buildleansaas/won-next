@@ -50,24 +50,32 @@ export default function About({ about }) {
                 <a
                   about="_blank"
                   href="http://wonbuddhism.org/#/what-is-won-buddhism"
+                  target="_blank"
+                  rel="noopener"
                   className="button-link">
                   More About Won-Buddhism
                 </a>
                 <a
                   about="_blank"
                   href="http://wonbuddhism.org/#/il-won-sang"
+                  target="_blank"
+                  rel="noopener"
                   className="button-link">
                   Our Teachings
                 </a>
                 <a
                   about="_blank"
                   href="http://wonbuddhism.org/#/timeless-zen"
+                  target="_blank"
+                  rel="noopener"
                   className="button-link">
                   How to Practice
                 </a>
                 <a
                   about="_blank"
                   href="http://wonbuddhism.org/#/resource"
+                  target="_blank"
+                  rel="noopener"
                   className="button-link">
                   Main Writings
                 </a>
