@@ -42,7 +42,7 @@ export default function Activities({ events, schedule }) {
                             <strong>{timeslot.day}</strong> from{" "}
                             <strong>{timeslot.startTime}</strong> at the{" "}
                             <a
-                              about="_blank"
+                              target="_blank"
                               href={`https://www.google.com/maps/place/${timeslot.location.address}`}
                             >
                               {timeslot.location.title}
@@ -54,7 +54,7 @@ export default function Activities({ events, schedule }) {
                       <div className="button-link-container-flex">
                         <a
                           className="button-link"
-                          about="_blank"
+                          target="_blank"
                           href={`mailto:rvawonbuddhism.org&subject=Interested in ${schedule.title}`}
                         >
                           More Information
@@ -91,18 +91,18 @@ export default function Activities({ events, schedule }) {
                     <p>{event.description}</p>
                     <div className="button-link-container-flex">
                       <a
-                        about="_blank"
+                        target="_blank"
                         href={event.moreInfo}
                         className="button-link"
                       >
                         Get More Information
                       </a>
-                      <a about="_blank" href="" className="button-link">
+                      <a target="_blank" href="" className="button-link">
                         Location
                       </a>
                       <a
                         className="button-link"
-                        about="_blank"
+                        target="_blank"
                         href={`mailto:rvawonbuddhism.org&subject=Interested in ${moment(
                           event.eventBegin
                         ).format("MMMM")} ${event.title}`}
