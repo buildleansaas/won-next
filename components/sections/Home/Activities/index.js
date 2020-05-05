@@ -97,7 +97,11 @@ export default function Activities({ events, schedule }) {
                       >
                         Get More Information
                       </a>
-                      <a target="_blank" href="" className="button-link">
+                      <a
+                        target="_blank"
+                        href={`https://www.google.com/maps/place/${event.location.address}`}
+                        className="button-link"
+                      >
                         Location
                       </a>
                       <a
