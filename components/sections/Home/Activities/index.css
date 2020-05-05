@@ -1,5 +1,6 @@
 .Home-info-programs,
-.Home-info-upcoming {
+.Home-info-upcoming,
+.Home-info-videos {
   padding: 0 24px;
 }
 
@@ -42,4 +43,23 @@ p.no-items {
 
 .donation-information p {
   text-align: center !important;
+}
+
+.videos-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.video-container iframe {
+  max-width: 768px;
+}
+
+@media (min-width: 1024px) {
+  .video-container,
+  .more-soon-container {
+    padding: 0 8px;
+    max-width: 460px;
+  }
 }

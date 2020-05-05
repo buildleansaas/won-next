@@ -1,18 +1,18 @@
 import React from "react";
 import ScrollableAnchor from "react-scrollable-anchor";
-import Link from "next/link";
 
 import moment from "moment";
 
 import "./index.css";
 
-export default function Activities({ events, schedule }) {
+export default function Activities({ events, schedule, videos }) {
   const liveEvents =
     events.filter(event => {
       if (event.active) {
         return event;
       }
     }) || [];
+
   const liveSchedule =
     schedule.filter(schedule => {
       if (schedule.active) {
@@ -27,8 +27,10 @@ export default function Activities({ events, schedule }) {
           <div className="Home-info-programs">
             <h3>Weekly Schedule</h3>
             <div className="Home-info-items">
-              {liveSchedule.items ? (
-                <p className="no-items">Schedule is loading...</p>
+              {Boolean(liveSchedule) ? (
+                <p className="no-items">
+                  Currently we are not hosting events at the Temple
+                </p>
               ) : (
                 <div className="Home-info-items">
                   {liveSchedule.map(schedule => (
@@ -68,7 +70,7 @@ export default function Activities({ events, schedule }) {
           </div>
           <div className="Home-info-upcoming">
             <h3>Upcoming Events and Workshops!</h3>
-            {liveEvents.items ? (
+            {Boolean(liveEvents) ? (
               <p className="no-items">
                 Currently there are no upcoming events, we hope to populate this
                 list shortly!
@@ -118,6 +120,25 @@ export default function Activities({ events, schedule }) {
                 ))}
               </div>
             )}
+          </div>
+        </div>
+        <div className="Home-info-videos">
+          <h3>Free Online Classes</h3>
+          <div className="videos-container">
+            {videos.map((video, i) => (
+              <div className="video-container" key={i}>
+                <iframe
+                  width="100%"
+                  height="315"
+                  src={video.embedLink}
+                  frameborder="0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+                <h4>{video.title}</h4>
+                <p>{video.description}</p>
+              </div>
+            ))}
           </div>
         </div>
         <hr className="divider" />
