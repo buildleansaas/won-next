@@ -125,18 +125,21 @@ export default function Activities({ events, schedule, videos }) {
         <div className="Home-info-videos">
           <h3>Free Online Classes</h3>
           <div className="videos-container">
-            {videos.map((video, i) => (
-              <div className="video-container" key={i}>
-                <iframe
-                  width="100%"
-                  height="315"
-                  src={`https://www.youtube.com/embed/${video.embed}`}
-                  frameborder="0"
-                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen
-                ></iframe>
-                <h4>{video.title}</h4>
-                <p>{video.description}</p>
+            {videos.map(({ embed, title, description }, i) => (
+              <div className="video-container">
+                <div className="iframe-container" key={i}>
+                  <iframe
+                    width="512"
+                    height="315"
+                    src={`https://www.youtube.com/embed/${embed}`}
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                </div>
+
+                <h4>{title}</h4>
+                <p>{description}</p>
               </div>
             ))}
           </div>
