@@ -130,7 +130,7 @@ export default function Activities({ events, schedule, videos }) {
                 <iframe
                   width="100%"
                   height="315"
-                  src={video.embedLink}
+                  src={`https://www.youtube.com/embed/${video.embed}`}
                   frameborder="0"
                   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                   allowfullscreen
