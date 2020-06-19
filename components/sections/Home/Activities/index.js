@@ -23,7 +23,7 @@ export default function Activities({ events, schedule, videos }) {
   return (
     <ScrollableAnchor id={"activities"}>
       <div className="Home-info inner-wrapper">
-        <div className="flex-info">
+        {/* <div className="flex-info">
           <div className="Home-info-programs">
             <h3>Weekly Schedule</h3>
             <div className="Home-info-items">
@@ -121,9 +121,15 @@ export default function Activities({ events, schedule, videos }) {
               </div>
             )}
           </div>
-        </div>
+        </div> */}
         <div className="Home-info-videos">
           <h3>Free Online Classes</h3>
+          <h4>
+            Due to precautions with COVID-19, we are transitioning to online
+            teaching. Please view some of these videos we have created for you
+            to take Tai Chi online! We hope you enjoy.
+          </h4>
+          <div className="divider" />
           <div className="videos-container">
             {videos.map(({ embed, title, description }, i) => (
               <div className="video-container">
