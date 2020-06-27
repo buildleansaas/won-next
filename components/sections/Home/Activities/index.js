@@ -20,6 +20,8 @@ export default function Activities({ events, schedule, videos }) {
       }
     }) || [];
 
+  console.log(liveSchedule.length);
+
   return (
     <ScrollableAnchor id={"activities"}>
       <div className="Home-info inner-wrapper">
@@ -27,45 +29,39 @@ export default function Activities({ events, schedule, videos }) {
           <div className="Home-info-programs">
             <h3>Weekly Schedule</h3>
             <div className="Home-info-items">
-              {Boolean(liveSchedule) ? (
-                <p className="no-items">
-                  Currently we are not hosting events at the Temple
-                </p>
-              ) : (
-                <div className="Home-info-items">
-                  {liveSchedule.map(schedule => (
-                    <div className="Home-info-item" key={schedule._id}>
-                      <h4>{schedule.title}</h4>
-                      <p>{schedule.description}</p>
-                      <p>Timeslots:</p>
-                      <ul>
-                        {schedule.timeslots.map(timeslot => (
-                          <li>
-                            <strong>{timeslot.day}</strong> from{" "}
-                            <strong>{timeslot.startTime}</strong> at the{" "}
-                            <a
-                              target="_blank"
-                              href={`https://www.google.com/maps/place/${timeslot.location.address}`}
-                            >
-                              {timeslot.location.title}
-                            </a>
-                            . {timeslot.endTime}
-                          </li>
-                        ))}
-                      </ul>
-                      <div className="button-link-container-flex">
-                        <a
-                          className="button-link"
-                          target="_blank"
-                          href={`mailto:rvawonbuddhism.org&subject=Interested in ${schedule.title}`}
-                        >
-                          More Information
-                        </a>
-                      </div>
+              <div className="Home-info-items">
+                {liveSchedule.map(schedule => (
+                  <div className="Home-info-item" key={schedule._id}>
+                    <h4>{schedule.title}</h4>
+                    <p>{schedule.description}</p>
+                    <p>Timeslots:</p>
+                    <ul>
+                      {schedule.timeslots.map(timeslot => (
+                        <li>
+                          <strong>{timeslot.day}</strong> from{" "}
+                          <strong>{timeslot.startTime}</strong> at the{" "}
+                          <a
+                            target="_blank"
+                            href={`https://www.google.com/maps/place/${timeslot.location.address}`}
+                          >
+                            {timeslot.location.title}
+                          </a>
+                          . {timeslot.endTime}
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="button-link-container-flex">
+                      <a
+                        className="button-link"
+                        target="_blank"
+                        href={`mailto:rvawonbuddhism.org&subject=Interested in ${schedule.title}`}
+                      >
+                        More Information
+                      </a>
                     </div>
-                  ))}
-                </div>
-              )}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
           {/* <div className="Home-info-upcoming">
