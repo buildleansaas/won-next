@@ -1,54 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import Slider from "react-slick";
 import "./slider.css";
 
-const images = [
-  {
-    alt: "the temple reverendes Kim and Diane",
-    number: 0,
-  },
-  {
-    alt: "the temple reverendes Kim and Diane",
-    number: 1,
-  },
-  {
-    alt: "a view of the driveway",
-    number: 3,
-  },
-  {
-    alt: "a look inside the temple",
-    number: 5,
-  },
-  {
-    alt: "welcome to the temple!",
-    number: 6,
-  },
-  {
-    alt: "a look of the driveway approaching the temple",
-    number: 7,
-  },
-  {
-    alt: "Kim, Diane and Chuck taking a rest after envigorating Tai Chi!",
-    number: 8,
-  },
-  {
-    alt: "Helping hands taking care of our beautiful grounds!",
-    number: 9,
-  },
-  {
-    alt: "Kim Kyomunim!",
-    number: 10,
-  },
-  {
-    alt: "Our temple is beautiful in the Fall, and all year around!",
-    number: 11,
-  },
-  {
-    alt: "Boys and girls youth from Korea come stay, learn about America!",
-    number: 12,
-  },
-];
+import sanity from "../../../../lib/sanity";
+import { getSlides } from "../../../../api/slides";
 
 function shuffle(a) {
   for (let i = a.length - 1; i > 0; i--) {
@@ -59,6 +15,19 @@ function shuffle(a) {
 }
 
 export default function Carousel() {
+  const [slides, setSlides] = useState([]);
+
+  async function fetchSlides() {
+    const slides = await sanity.fetch(getSlides);
+    setSlides(slides);
+  }
+
+  useEffect(() => {
+    fetchSlides();
+  }, []);
+
+  console.log(slides);
+
   const settings = {
     dots: false,
     infinite: true,
@@ -67,19 +36,20 @@ export default function Carousel() {
     slidesToScroll: 1,
     arrows: false,
     autoplay: true,
-    adaptiveHeight: true,
+    adaptiveHeight: true
   };
 
   return (
     <Slider {...settings}>
-      {shuffle(images).map((image, i) => (
-        <img
-          key={i}
-          alt={image.alt}
-          src={`/static/slides/${image.number}.jpg`}
-          className="slide-image"
-        />
-      ))}
+      {slides.length &&
+        shuffle(slides).map((image, i) => (
+          <img
+            key={i}
+            alt={image.caption}
+            src={image.imageUrl}
+            className="slide-image"
+          />
+        ))}
     </Slider>
   );
 }
