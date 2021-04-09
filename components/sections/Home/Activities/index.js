@@ -20,8 +20,6 @@ export default function Activities({ events, schedule, videos }) {
       }
     }) || [];
 
-  console.log(liveSchedule.length);
-
   return (
     <ScrollableAnchor id={"activities"}>
       <div className="Home-info inner-wrapper">
@@ -39,14 +37,17 @@ export default function Activities({ events, schedule, videos }) {
                       {schedule.timeslots.map(timeslot => (
                         <li>
                           <strong>{timeslot.day}</strong> from{" "}
-                          <strong>{timeslot.startTime}</strong> at the{" "}
-                          <a
-                            target="_blank"
-                            href={`https://www.google.com/maps/place/${timeslot.location.address}`}
-                          >
-                            {timeslot.location.title}
-                          </a>
-                          . {timeslot.endTime}
+                          <strong>{timeslot.startTime}</strong>,{" "}
+                          {timeslot.location.address ? (
+                            <a
+                              target="_blank"
+                              href={`https://www.google.com/maps/place/${timeslot.location.address}`}
+                            >
+                              {timeslot.location.title}
+                            </a>
+                          ) : (
+                            timeslot.location.title
+                          )}
                         </li>
                       ))}
                     </ul>
