@@ -57,8 +57,17 @@ export default function Activities({ events, schedule, videos }) {
                         target="_blank"
                         href={`mailto:rvawonbuddhism.org&subject=Interested in ${schedule.title}`}
                       >
-                        More Information
+                        Contact Us
                       </a>
+                      {schedule.link && (
+                        <a
+                          className="button-link"
+                          target="_blank"
+                          href={schedule.link}
+                        >
+                          More Information
+                        </a>
+                      )}
                     </div>
                   </div>
                 ))}

@@ -4,6 +4,7 @@ export const getSchedule = `
     active,
     title,
     description,
+    link,
     timeslots[] {
         location -> {
             ...

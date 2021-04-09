@@ -26,8 +26,6 @@ export default function Carousel() {
     fetchSlides();
   }, []);
 
-  console.log(slides);
-
   const settings = {
     dots: false,
     infinite: true,
