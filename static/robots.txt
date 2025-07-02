@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.richmond-va.wonbuddhism.org/static/sitemap.xml
