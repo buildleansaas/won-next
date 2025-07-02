@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 
 import Slider from "react-slick";
-import "./slider.css";
 
 import sanity from "../../../../lib/sanity";
 import { getSlides } from "../../../../api/slides";

@@ -12,8 +12,6 @@ import Activities from "../components/sections/Home/Activities/";
 import About from "../components/sections/Home/About/";
 import Footer from "../components/sections/Home/Footer/";
 
-import "./index.css";
-import "./header.css";
 
 import t from "../locale";
 

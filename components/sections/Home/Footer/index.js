@@ -1,8 +1,6 @@
 import React from "react";
 import seoPages from "../../../../seo-pages.json";
 
-import "./index.css";
-
 export default function Footer({ footer }) {
   return (
     <footer>

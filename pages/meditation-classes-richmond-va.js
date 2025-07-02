@@ -1,6 +1,5 @@
 import pages from '../seo-pages.json';
 import SeoPage from '../components/SeoPage';
-import './index.css';
 
 const data = pages.find(p => p.slug === 'meditation-classes-richmond-va');
 

@@ -1,7 +1,5 @@
 import React from "react";
 
-import "./index.css";
-
 export default function Introduction({ header, intro, locale, changeState }) {
   return (
     <div className="Home-top">

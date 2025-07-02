@@ -3,8 +3,6 @@ import ScrollableAnchor from "react-scrollable-anchor";
 
 import moment from "moment";
 
-import "./index.css";
-
 export default function Activities({ events, schedule, videos }) {
   const liveEvents =
     events.filter(event => {

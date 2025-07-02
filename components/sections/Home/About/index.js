@@ -4,8 +4,6 @@ import ScrollableAnchor from "react-scrollable-anchor";
 // carousel
 import Slider from "./slider";
 
-import "./index.css";
-
 export default function About({ about }) {
   return (
     <ScrollableAnchor id={"about"}>

@@ -1,2 +1,4 @@
-const withCSS = require("@zeit/next-css");
-module.exports = withCSS();
+// next.config.js
+module.exports = {
+  reactStrictMode: true,
+};
