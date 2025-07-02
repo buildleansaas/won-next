@@ -15,3 +15,12 @@ footer p {
 footer img {
   height: 40px;
 }
+
+.seo-links {
+  margin-top: 12px;
+}
+
+.seo-links a {
+  color: #ffd700;
+  margin: 0 8px;
+}

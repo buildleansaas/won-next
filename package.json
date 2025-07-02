@@ -9,8 +9,9 @@
   "private": false,
   "scripts": {
     "dev": "next",
+    "build": "next build && npm run generate-sitemap",
     "start": "next start -p $PORT",
-    "heroku-postbuild": "next build"
+    "generate-sitemap": "node scripts/generate-sitemap.js"
   },
   "dependencies": {
     "@sanity/client": "^0.147.3",
