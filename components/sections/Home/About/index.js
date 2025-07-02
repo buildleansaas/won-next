@@ -8,8 +8,8 @@ export default function About({ about }) {
   return (
     <ScrollableAnchor id={"about"}>
       <div className="Home-about">
-        <div className="gold-background">
-          <div className="Home-about-info inner-wrapper flex-info">
+        <div className="bg-yellow-400 p-6">
+          <div className="flex flex-col lg:flex-row items-start lg:items-center gap-6 max-w-5xl mx-auto">
             <div className="Home-about-info-text">
               <h3>{about.title}</h3>
               {about.about_paragraphs.map((p, i) => (
@@ -19,13 +19,13 @@ export default function About({ about }) {
                 <a
                   about="_blank"
                   href="mailto:richmond-va@wonbuddhism.org?Interest in Won-Buddhism Richmond Temple"
-                  className="button-link">
+                  className="button-link gold-bg-button">
                   Email Us Today
                 </a>
                 <a
                   about="_blank"
                   href="https://www.google.com/maps/place/Won+Buddhism+of+Richmond+Inc/@37.629929,-77.2996487,17z/data=!3m1!4b1!4m5!3m4!1s0x89b1234210dc55c9:0x1aa8a4363049ebf5!8m2!3d37.629929!4d-77.29746"
-                  className="button-link">
+                  className="button-link gold-bg-button">
                   Visit Our Location
                 </a>
               </p>
@@ -37,8 +37,8 @@ export default function About({ about }) {
           </div>
         </div>
 
-        <div className="light-grey-background">
-          <div className="inner-wrapper flex-info">
+        <div className="bg-gray-50 p-6">
+          <div className="flex flex-col lg:flex-row items-start lg:items-center gap-6 max-w-5xl mx-auto">
             <div>
               <h3>{about.subtitle}</h3>
               {about.about_won_paragraphs.map((p, i) => (

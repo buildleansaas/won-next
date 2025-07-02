@@ -21,13 +21,13 @@ export default function Activities({ events, schedule, videos }) {
   return (
     <ScrollableAnchor id={"activities"}>
       <div className="Home-info inner-wrapper">
-        <div className="flex-info">
+        <div className="flex flex-wrap md:flex-nowrap justify-between items-start gap-6">
           <div className="Home-info-programs">
             <h3>Weekly Schedule</h3>
             <div className="Home-info-items">
               <div className="Home-info-items">
                 {liveSchedule.map(schedule => (
-                  <div className="Home-info-item" key={schedule._id}>
+                  <div className="border-4 border-yellow-400 p-4 m-4" key={schedule._id}>
                     <h4>{schedule.title}</h4>
                     <p>{schedule.description}</p>
                     <p>Timeslots:</p>
@@ -51,7 +51,7 @@ export default function Activities({ events, schedule, videos }) {
                     </ul>
                     <div className="button-link-container-flex">
                       <a
-                        className="button-link"
+                        className="bg-yellow-400 text-black px-4 py-2 rounded hover:bg-black hover:text-yellow-400"
                         target="_blank"
                         href={`mailto:rvawonbuddhism.org&subject=Interested in ${schedule.title}`}
                       >
@@ -59,7 +59,7 @@ export default function Activities({ events, schedule, videos }) {
                       </a>
                       {schedule.link && (
                         <a
-                          className="button-link"
+                          className="bg-yellow-400 text-black px-4 py-2 rounded hover:bg-black hover:text-yellow-400"
                           target="_blank"
                           href={schedule.link}
                         >
@@ -82,7 +82,7 @@ export default function Activities({ events, schedule, videos }) {
             ) : (
               <div className="Home-info-items">
                 {liveEvents.map(event => (
-                  <div className="Home-info-item" key={event._id}>
+                  <div className="border-4 border-yellow-400 p-4 m-4" key={event._id}>
                     <h4>{event.title}</h4>
                     <p>
                       From{" "}
@@ -99,19 +99,19 @@ export default function Activities({ events, schedule, videos }) {
                       <a
                         target="_blank"
                         href={event.moreInfo}
-                        className="button-link"
+                        className="bg-yellow-400 text-black px-4 py-2 rounded hover:bg-black hover:text-yellow-400"
                       >
                         Get More Information
                       </a>
                       <a
                         target="_blank"
                         href={`https://www.google.com/maps/place/${event.location.address}`}
-                        className="button-link"
+                        className="bg-yellow-400 text-black px-4 py-2 rounded hover:bg-black hover:text-yellow-400"
                       >
                         Location
                       </a>
                       <a
-                        className="button-link"
+                        className="bg-yellow-400 text-black px-4 py-2 rounded hover:bg-black hover:text-yellow-400"
                         target="_blank"
                         href={`mailto:richmond-va@wonbuddhism.org&subject=Interested in ${moment(
                           event.eventBegin
@@ -137,10 +137,9 @@ export default function Activities({ events, schedule, videos }) {
           <div className="videos-container">
             {videos.map(({ embed, title, description }, i) => (
               <div className="video-container">
-                <div className="iframe-container" key={i}>
+                <div className="relative pb-[56.25%] h-0" key={i}>
                   <iframe
-                    width="512"
-                    height="315"
+                    className="absolute inset-0 w-full h-full"
                     src={`https://www.youtube.com/embed/${embed}`}
                     frameBorder="0"
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
@@ -155,7 +154,7 @@ export default function Activities({ events, schedule, videos }) {
           </div>
         </div>
         <hr className="divider" />
-        <div className="donation-information">
+        <div className="border rounded bg-white text-gray-600 p-4 max-w-3xl mx-auto text-center">
           <p>
             There are no fees for our programs, however, the temple is fully
             self-supporting and any level of donations are much appreciated!
@@ -163,7 +162,7 @@ export default function Activities({ events, schedule, videos }) {
           <p>
             <a
               href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZHRPK4RDFN7T6"
-              className="button-link"
+              className="bg-yellow-400 text-black px-4 py-2 rounded hover:bg-black hover:text-yellow-400"
             >
               🙏 Donate Via PayPal 🙏
             </a>

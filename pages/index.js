@@ -12,7 +12,6 @@ import Activities from "../components/sections/Home/Activities/";
 import About from "../components/sections/Home/About/";
 import Footer from "../components/sections/Home/Footer/";
 
-
 import t from "../locale";
 
 class Home extends Component {
@@ -51,16 +50,16 @@ class Home extends Component {
           <Head>
             <title>Home | Won Buddhism of Richmond</title>
           </Head>
-          <nav>
-            <ul className="header-links">
+          <nav className="fixed top-0 left-0 right-0 bg-black/25 z-50">
+            <ul className="flex justify-end list-none p-8 space-x-4 uppercase text-white font-light md:text-base sm:text-sm sm:justify-center sm:p-4">
               <li>
-                <a href="#home">{header.home}</a>
+                <a href="#home" className="hover:text-yellow-400 transition-colors">{header.home}</a>
               </li>
               <li>
-                <a href="#activities">{header.activities}</a>
+                <a href="#activities" className="hover:text-yellow-400 transition-colors">{header.activities}</a>
               </li>
               <li>
-                <a href="#about">{header.about}</a>
+                <a href="#about" className="hover:text-yellow-400 transition-colors">{header.about}</a>
               </li>
               {/* <li>
                 <button
@@ -69,7 +68,7 @@ class Home extends Component {
                     this.changeState("locale", locale === "en" ? "kr" : "en");
                   }}>
                   <img
-                    className="flag"
+                    className="w-8 relative top-2"
                     src={locale === "en" ? "/static/usa.png" : "/static/sk.png"}
                     alt={`Flag for the country of ${
                       locale === "en" ? "America" : "South Korea"

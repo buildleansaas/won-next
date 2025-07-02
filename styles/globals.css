@@ -1,0 +1,163 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400');
+
+/* Custom base styles using Tailwind's @layer directive */
+@layer base {
+  html {
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  li,
+  p {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+  }
+  
+  p {
+    text-align: justify;
+  }
+  
+  a {
+    font-weight: 400;
+    color: #dc143c; /* crimson */
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: #ffd700;
+  }
+  
+  h3,
+  h4 {
+    font-weight: 400;
+  }
+  
+  h3 {
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+  }
+  
+  button:focus {
+    outline: 0;
+  }
+}
+
+/* Custom component classes */
+@layer components {
+  .divider {
+    margin: 24px auto;
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0.25),
+      rgba(0, 0, 0, 0)
+    );
+  }
+  
+  .emoji {
+    width: 24px;
+    position: relative;
+    top: 4px;
+  }
+  
+  .inner-wrapper {
+    max-width: 1024px;
+    margin: 48px auto;
+  }
+  
+  .inner-wrapper.narrow {
+    max-width: 768px;
+  }
+  
+  .flex-info {
+    @apply flex items-start justify-between;
+  }
+  
+  .button-link-container-flex {
+    @apply max-w-lg flex flex-wrap;
+  }
+  
+  .button-link-container-flex a {
+    @apply m-2;
+  }
+  
+  .map-iframe {
+    @apply border-0;
+  }
+  
+  .no-button {
+    @apply border-none bg-transparent;
+  }
+  
+  .button-link {
+    @apply bg-yellow-400 text-black px-4 py-2 rounded my-3 transition-colors hover:text-yellow-400 hover:bg-black cursor-pointer;
+  }
+  
+  .button-link.gold-bg-button {
+    @apply bg-gray-800 text-yellow-400 hover:text-gray-800 hover:bg-white;
+  }
+  
+  .button-link.margin-left {
+    @apply ml-3;
+  }
+  
+  p.no-items {
+    @apply text-lg pb-4;
+  }
+  
+  .special-notice-banner {
+    @apply z-50 fixed right-0 left-0 bottom-0 bg-yellow-400;
+  }
+  
+  .special-notice-banner p {
+    @apply text-sm text-center;
+  }
+  
+  .special-notice-banner .button-link {
+    @apply bg-gray-800 text-yellow-400 hover:text-gray-800 hover:bg-white;
+  }
+  
+  /* Slider overrides */
+  .slick-list,
+  .slick-slider,
+  .slick-track {
+    position: initial !important;
+  }
+  
+  .slick-dots {
+    bottom: -40px !important;
+  }
+  
+  .slide-image {
+    min-height: 300px;
+  }
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+  .flex-info {
+    flex-direction: column;
+  }
+  
+  .inner-wrapper {
+    margin: 24px auto;
+  }
+  
+  .button-link-container-flex {
+    max-width: 100%;
+    font-size: small;
+    align-items: center;
+    justify-content: center;
+  }
+}
