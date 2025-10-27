@@ -8,6 +8,7 @@
 @layer base {
   html {
     font-family: 'Open Sans', sans-serif;
+    scroll-behavior: smooth;
   }
   
   body,
@@ -28,7 +29,7 @@
   
   a {
     font-weight: 400;
-    color: #dc143c; /* crimson */
+    color: inherit; /* inherit from context (e.g., nav/footer) */
     text-decoration: none;
   }
   

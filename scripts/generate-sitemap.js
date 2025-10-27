@@ -13,5 +13,6 @@ const xml = `<?xml version="1.0" encoding="UTF-8"?>\n` +
     .join('\n') +
   '\n</urlset>\n';
 
-fs.writeFileSync(path.join(__dirname, '..', 'static', 'sitemap.xml'), xml);
+// Write into Next.js public directory so it's served as /static/sitemap.xml
+fs.writeFileSync(path.join(__dirname, '..', 'public', 'static', 'sitemap.xml'), xml);
 console.log('sitemap.xml generated with', urls.length, 'urls');

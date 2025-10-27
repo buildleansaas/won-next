@@ -1,7 +1,5 @@
 import React from "react";
-import ScrollableAnchor from "react-scrollable-anchor";
 
-import moment from "moment";
 
 export default function Activities({ events, schedule, videos }) {
   const liveEvents =
@@ -19,8 +17,7 @@ export default function Activities({ events, schedule, videos }) {
     }) || [];
 
   return (
-    <ScrollableAnchor id={"activities"}>
-      <div className="Home-info inner-wrapper">
+    <div id="activities" className="Home-info inner-wrapper scroll-mt-16">
         <div className="flex flex-wrap md:flex-nowrap justify-between items-start gap-6">
           <div className="Home-info-programs">
             <h3>Weekly Schedule</h3>
@@ -32,13 +29,14 @@ export default function Activities({ events, schedule, videos }) {
                     <p>{schedule.description}</p>
                     <p>Timeslots:</p>
                     <ul>
-                      {schedule.timeslots.map(timeslot => (
-                        <li>
+                      {schedule.timeslots.map((timeslot, i) => (
+                        <li key={`${schedule._id || schedule.title}-${i}`}>
                           <strong>{timeslot.day}</strong> from{" "}
                           <strong>{timeslot.startTime}</strong>,{" "}
                           {timeslot.location.address ? (
                             <a
                               target="_blank"
+                              rel="noopener"
                               href={`https://www.google.com/maps/place/${timeslot.location.address}`}
                             >
                               {timeslot.location.title}
@@ -53,7 +51,10 @@ export default function Activities({ events, schedule, videos }) {
                       <a
                         className="bg-yellow-400 text-black px-4 py-2 rounded hover:bg-black hover:text-yellow-400"
                         target="_blank"
-                        href={`mailto:rvawonbuddhism.org&subject=Interested in ${schedule.title}`}
+                        rel="noopener"
+                        href={`mailto:richmond-va@wonbuddhism.org?subject=Interested in ${encodeURIComponent(
+                          schedule.title
+                        )}`}
                       >
                         Contact Us
                       </a>
@@ -61,6 +62,7 @@ export default function Activities({ events, schedule, videos }) {
                         <a
                           className="bg-yellow-400 text-black px-4 py-2 rounded hover:bg-black hover:text-yellow-400"
                           target="_blank"
+                          rel="noopener"
                           href={schedule.link}
                         >
                           More Information
@@ -72,59 +74,7 @@ export default function Activities({ events, schedule, videos }) {
               </div>
             </div>
           </div>
-          {/* <div className="Home-info-upcoming">
-            <h3>Upcoming Events and Workshops!</h3>
-            {Boolean(liveEvents) ? (
-              <p className="no-items">
-                Currently there are no upcoming events, we hope to populate this
-                list shortly!
-              </p>
-            ) : (
-              <div className="Home-info-items">
-                {liveEvents.map(event => (
-                  <div className="border-4 border-yellow-400 p-4 m-4" key={event._id}>
-                    <h4>{event.title}</h4>
-                    <p>
-                      From{" "}
-                      <strong>
-                        {moment(event.eventBegin).format("dddd MMMM, Do, YYYY")}
-                      </strong>{" "}
-                      to{" "}
-                      <strong>
-                        {moment(event.eventEnd).format("dddd MMMM, Do, YYYY")}
-                      </strong>
-                    </p>
-                    <p>{event.description}</p>
-                    <div className="button-link-container-flex">
-                      <a
-                        target="_blank"
-                        href={event.moreInfo}
-                        className="bg-yellow-400 text-black px-4 py-2 rounded hover:bg-black hover:text-yellow-400"
-                      >
-                        Get More Information
-                      </a>
-                      <a
-                        target="_blank"
-                        href={`https://www.google.com/maps/place/${event.location.address}`}
-                        className="bg-yellow-400 text-black px-4 py-2 rounded hover:bg-black hover:text-yellow-400"
-                      >
-                        Location
-                      </a>
-                      <a
-                        className="bg-yellow-400 text-black px-4 py-2 rounded hover:bg-black hover:text-yellow-400"
-                        target="_blank"
-                        href={`mailto:richmond-va@wonbuddhism.org&subject=Interested in ${moment(
-                          event.eventBegin
-                        ).format("MMMM")} ${event.title}`}
-                      >
-                        Sign Up
-                      </a>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            )}
-          </div> */}
+          {/* Upcoming events section removed for now */}
         </div>
         <div className="Home-info-videos">
           <h3>Free Online Classes</h3>
@@ -136,11 +86,12 @@ export default function Activities({ events, schedule, videos }) {
           <div className="divider" />
           <div className="videos-container">
             {videos.map(({ embed, title, description }, i) => (
-              <div className="video-container">
-                <div className="relative pb-[56.25%] h-0" key={i}>
+              <div className="video-container" key={embed || i}>
+                <div className="relative pb-[56.25%] h-0">
                   <iframe
                     className="absolute inset-0 w-full h-full"
                     src={`https://www.youtube.com/embed/${embed}`}
+                    title={title}
                     frameBorder="0"
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
@@ -169,6 +120,5 @@ export default function Activities({ events, schedule, videos }) {
           </p>
         </div>
       </div>
-    </ScrollableAnchor>
   );
 }

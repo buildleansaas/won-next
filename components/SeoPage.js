@@ -1,13 +1,10 @@
 import React from 'react';
-import Head from 'next/head';
+import AnnouncementBanner from './AnnouncementBanner';
 
 export default function SeoPage({ title, description, heading, children }) {
   return (
     <div className="SeoPage">
-      <Head>
-        <title>{title}</title>
-        {description && <meta name="description" content={description} />}
-      </Head>
+      <AnnouncementBanner />
       <div className="inner-wrapper narrow">
         <h1>{heading}</h1>
         {children}
