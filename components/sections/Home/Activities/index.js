@@ -2,6 +2,12 @@ import React from "react";
 
 
 export default function Activities({ events, schedule, videos }) {
+  const cleanseDescription = (desc) => {
+    if (!desc) return null;
+    return /covid[- ]?19|covid/i.test(desc)
+      ? "We are open again. Please join us in person at the temple."
+      : desc;
+  };
   const liveEvents =
     events.filter(event => {
       if (event.active) {
@@ -19,14 +25,16 @@ export default function Activities({ events, schedule, videos }) {
   return (
     <div id="activities" className="Home-info inner-wrapper scroll-mt-16">
         <div className="flex flex-wrap md:flex-nowrap justify-between items-start gap-6">
-          <div className="Home-info-programs">
+          <div className="Home-info-programs w-full">
             <h3>Weekly Schedule</h3>
             <div className="Home-info-items">
               <div className="Home-info-items">
                 {liveSchedule.map(schedule => (
-                  <div className="border-4 border-yellow-400 p-4 m-4" key={schedule._id}>
+                  <div className="border-4 border-yellow-400 p-4 my-4 w-full" key={schedule._id}>
                     <h4>{schedule.title}</h4>
-                    <p>{schedule.description}</p>
+                    {cleanseDescription(schedule.description) && (
+                      <p>{cleanseDescription(schedule.description)}</p>
+                    )}
                     <p>Timeslots:</p>
                     <ul>
                       {schedule.timeslots.map((timeslot, i) => (
@@ -58,16 +66,6 @@ export default function Activities({ events, schedule, videos }) {
                       >
                         Contact Us
                       </a>
-                      {schedule.link && (
-                        <a
-                          className="bg-yellow-400 text-black px-4 py-2 rounded hover:bg-black hover:text-yellow-400"
-                          target="_blank"
-                          rel="noopener"
-                          href={schedule.link}
-                        >
-                          More Information
-                        </a>
-                      )}
                     </div>
                   </div>
                 ))}
@@ -76,15 +74,23 @@ export default function Activities({ events, schedule, videos }) {
           </div>
           {/* Upcoming events section removed for now */}
         </div>
-        <div className="Home-info-videos">
+        <div className="Home-info-videos w-full">
           <h3>Free Online Classes</h3>
-          <h4>
-            Due to precautions with COVID-19, we are transitioning to online
-            teaching. Please view some of these videos we have created for you
-            to take Tai Chi online! We hope you enjoy.
+          <h4 className="mb-2">
+            Enjoy our online courses below. You can also explore additional
+            programs available via the Won Buddhism North Carolina Temple.
           </h4>
+          <a
+            className="inline-block bg-yellow-400 text-black px-4 py-2 rounded hover:bg-black hover:text-yellow-400"
+            href="https://www.wonbuddhismnc.org/online-programs"
+            target="_blank"
+            rel="noopener"
+          >
+            Free Online Classes
+          </a>
           <div className="divider" />
-          <div className="videos-container">
+          <h3 className="mt-6">Enjoy our Free Online Tai Chi Classes</h3>
+          <div className="videos-container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-4">
             {videos.map(({ embed, title, description }, i) => (
               <div className="video-container" key={embed || i}>
                 <div className="relative pb-[56.25%] h-0">
@@ -106,11 +112,11 @@ export default function Activities({ events, schedule, videos }) {
         </div>
         <hr className="divider" />
         <div className="border rounded bg-white text-gray-600 p-4 max-w-3xl mx-auto text-center">
-          <p>
+          <p className="text-center">
             There are no fees for our programs, however, the temple is fully
             self-supporting and any level of donations are much appreciated!
           </p>
-          <p>
+          <p className="pt-4 text-center">
             <a
               href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZHRPK4RDFN7T6"
               className="bg-yellow-400 text-black px-4 py-2 rounded hover:bg-black hover:text-yellow-400"
