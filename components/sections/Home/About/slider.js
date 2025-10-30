@@ -1,9 +1,5 @@
-import React, { useEffect, useState } from "react";
-
+import React from "react";
 import Slider from "react-slick";
-
-import sanity from "../../../../lib/sanity";
-import { getSlides } from "../../../../api/slides";
 
 function shuffle(a) {
   for (let i = a.length - 1; i > 0; i--) {
@@ -14,16 +10,17 @@ function shuffle(a) {
 }
 
 export default function Carousel() {
-  const [slides, setSlides] = useState([]);
-
-  async function fetchSlides() {
-    const slides = await sanity.fetch(getSlides);
-    setSlides(slides);
-  }
-
-  useEffect(() => {
-    fetchSlides();
-  }, []);
+  const slides = [
+    "/static/slides/0.jpg",
+    "/static/slides/1.jpg",
+    "/static/slides/3.jpg",
+    "/static/slides/5.jpg",
+    "/static/slides/6.jpg",
+    "/static/slides/7.jpg",
+    "/static/slides/9.jpg",
+    "/static/slides/10.jpg",
+    "/static/slides/11.jpg",
+  ];
 
   const settings = {
     dots: false,
@@ -38,15 +35,14 @@ export default function Carousel() {
 
   return (
     <Slider {...settings}>
-      {slides.length &&
-        shuffle(slides).map((image, i) => (
-          <img
-            key={i}
-            alt={image.caption}
-            src={image.imageUrl}
-            className="slide-image"
-          />
-        ))}
+      {shuffle(slides).map((src, i) => (
+        <img
+          key={i}
+          alt="temple slide"
+          src={src}
+          className="slide-image"
+        />
+      ))}
     </Slider>
   );
 }

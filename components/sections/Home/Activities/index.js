@@ -2,74 +2,61 @@ import React from "react";
 
 
 export default function Activities({ events, schedule, videos }) {
+  const NEW_PHONE = "804 618 1094";
+
+  const replacePhoneNumbers = (text) => {
+    if (!text || typeof text !== "string") return text;
+    // Match common US phone formats, with optional country code
+    const phoneRegex = /(?:\+?1[\s.-]?)?(?:\(?\d{3}\)?[\s.-]?)\d{3}[\s.-]?\d{4}/g;
+    return text.replace(phoneRegex, NEW_PHONE);
+  };
+
+  const extractPhone = (text) => {
+    if (!text || typeof text !== "string") return NEW_PHONE;
+    const match = text.match(/(?:\+?1[\s.-]?)?(?:\(?\d{3}\)?[\s.-]?)\d{3}[\s.-]?\d{4}/);
+    return match ? match[0] : NEW_PHONE;
+  };
+
+  const toTelHref = (raw) => {
+    if (!raw) return `tel:+18046181094`;
+    const digits = raw.replace(/\D/g, "");
+    const ten = digits.length === 11 && digits.startsWith("1") ? digits.slice(1) : digits;
+    const normalized = ten.length === 10 ? `+1${ten}` : `+1${digits}`;
+    return `tel:${normalized}`;
+  };
+
   const cleanseDescription = (desc) => {
     if (!desc) return null;
-    return /covid[- ]?19|covid/i.test(desc)
-      ? "We are open again. Please join us in person at the temple."
-      : desc;
+    if (/covid[- ]?19|covid/i.test(desc)) {
+      return "We are open again. Please join us in person at the temple.";
+    }
+    return replacePhoneNumbers(desc);
   };
-  const liveEvents =
-    events.filter(event => {
-      if (event.active) {
-        return event;
-      }
-    }) || [];
-
-  const liveSchedule =
-    schedule.filter(schedule => {
-      if (schedule.active) {
-        return schedule;
-      }
-    }) || [];
+  const liveEvents = Array.isArray(events) ? events : [];
+  const liveSchedule = Array.isArray(schedule) ? schedule : [];
 
   return (
     <div id="activities" className="Home-info inner-wrapper scroll-mt-16">
         <div className="flex flex-wrap md:flex-nowrap justify-between items-start gap-6">
           <div className="Home-info-programs w-full">
             <h3>Weekly Schedule</h3>
-            <div className="Home-info-items">
-              <div className="Home-info-items">
-                {liveSchedule.map(schedule => (
-                  <div className="border-4 border-yellow-400 p-4 my-4 w-full" key={schedule._id}>
-                    <h4>{schedule.title}</h4>
-                    {cleanseDescription(schedule.description) && (
-                      <p>{cleanseDescription(schedule.description)}</p>
-                    )}
-                    <p>Timeslots:</p>
-                    <ul>
-                      {schedule.timeslots.map((timeslot, i) => (
-                        <li key={`${schedule._id || schedule.title}-${i}`}>
-                          <strong>{timeslot.day}</strong> from{" "}
-                          <strong>{timeslot.startTime}</strong>,{" "}
-                          {timeslot.location.address ? (
-                            <a
-                              target="_blank"
-                              rel="noopener"
-                              href={`https://www.google.com/maps/place/${timeslot.location.address}`}
-                            >
-                              {timeslot.location.title}
-                            </a>
-                          ) : (
-                            timeslot.location.title
-                          )}
-                        </li>
-                      ))}
-                    </ul>
-                    <div className="button-link-container-flex">
-                      <a
-                        className="bg-yellow-400 text-black px-4 py-2 rounded hover:bg-black hover:text-yellow-400"
-                        target="_blank"
-                        rel="noopener"
-                        href={`mailto:richmond-va@wonbuddhism.org?subject=Interested in ${encodeURIComponent(
-                          schedule.title
-                        )}`}
-                      >
-                        Contact Us
-                      </a>
-                    </div>
+            <div className="space-y-4">
+              {liveSchedule.map(item => (
+                <div className="border-4 border-yellow-400 p-4 w-full" key={item._id || item.title}>
+                  <h4>{replacePhoneNumbers(item.title)}</h4>
+                  {cleanseDescription(item.description) && (
+                    <p>{cleanseDescription(item.description)}</p>
+                  )}
+                  <div className="button-link-container-flex mt-4">
+                    <a
+                      className="bg-yellow-400 text-black px-4 py-2 rounded hover:bg-black hover:text-yellow-400"
+                      href={toTelHref(extractPhone(item.description))}
+                    >
+                      Text to Register
+                    </a>
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
           </div>
           {/* Upcoming events section removed for now */}

@@ -1,6 +1,7 @@
 # TODO LIST
 
-Activities, weekly schedule
+copy wonbuddhismnc.org
 
-- timeslot additional comments
-- activity link
+- temple ettiquite (https://wonbuddhismnc.org/temple-etiquette)
+- questions about buddhism for students section (student visits) (https://wonbuddhismnc.org/buddhism-for-students)
+- profiles of monks
