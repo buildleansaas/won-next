@@ -35,6 +35,23 @@ export default function Activities({ events, schedule, videos }) {
   const liveEvents = Array.isArray(events) ? events : [];
   const liveSchedule = Array.isArray(schedule) ? schedule : [];
 
+  const scheduleDetails = (item) => {
+    if (!item) return null;
+    switch (item._id || item.title) {
+      case "dharma-service":
+      case "Won Buddhism Dharma Service":
+        return "Every Sunday from 2pm - 4pm";
+      case "meditation-beginners":
+      case "Meditation Class for Beginners":
+        return "Every Saturday from 9:30am to 11:30am";
+      case "tai-chi-qigong":
+      case "Tai Chi and Qi Gong":
+        return "Every Wednesday from 11am to 12 noon";
+      default:
+        return null;
+    }
+  };
+
   return (
     <div id="activities" className="Home-info inner-wrapper scroll-mt-16">
         <div className="flex flex-wrap md:flex-nowrap justify-between items-start gap-6">
@@ -46,6 +63,11 @@ export default function Activities({ events, schedule, videos }) {
                   <h4>{replacePhoneNumbers(item.title)}</h4>
                   {cleanseDescription(item.description) && (
                     <p>{cleanseDescription(item.description)}</p>
+                  )}
+                  {scheduleDetails(item) && (
+                    <p className="mt-2 text-gray-800">
+                      {scheduleDetails(item)}
+                    </p>
                   )}
                   <div className="button-link-container-flex mt-4">
                     <a
