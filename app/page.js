@@ -18,7 +18,7 @@ export default async function Page() {
       _id: "meditation-beginners",
       title: "Meditation Class for Beginners",
       description:
-        "Learn how to Meditate according to Won Buddhist doctrine. Join us from 9:30am to 11:30am. Please text (804) 618 - 1094 to make a reservation. We will do 20 Minutes of Qi Gong, 10 minutes of Chanting and a 30 Minute Meditation. The rest will be an open Q&A session.",
+        "Learn how to Meditate according to Won Buddhist doctrine. Join us from 10:30am to 12 noon. Please text (804) 618 - 1094 to make a reservation. We will do 20 Minutes of Qi Gong, 10 minutes of Chanting and a 30 Minute Meditation. The rest will be an open Q&A session.",
     },
     {
       _id: "tai-chi-qigong",

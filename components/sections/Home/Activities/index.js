@@ -43,10 +43,10 @@ export default function Activities({ events, schedule, videos }) {
         return "Every Sunday from 2pm - 4pm";
       case "meditation-beginners":
       case "Meditation Class for Beginners":
-        return "Every Saturday from 9:30am to 11:30am";
+        return "Every Saturday from 10:30am to 12 noon";
       case "tai-chi-qigong":
       case "Tai Chi and Qi Gong":
-        return "Every Wednesday from 11am to 12 noon";
+        return "Every Wednesday from 10:30am to 12 noon";
       default:
         return null;
     }
