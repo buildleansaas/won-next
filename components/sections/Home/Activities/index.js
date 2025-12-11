@@ -2,7 +2,7 @@ import React from "react";
 
 
 export default function Activities({ events, schedule, videos }) {
-  const NEW_PHONE = "804 618 1094";
+  const NEW_PHONE = "804-243-5878";
 
   const replacePhoneNumbers = (text) => {
     if (!text || typeof text !== "string") return text;
@@ -18,7 +18,7 @@ export default function Activities({ events, schedule, videos }) {
   };
 
   const toTelHref = (raw) => {
-    if (!raw) return `tel:+18046181094`;
+    if (!raw) return `tel:+18042435878`;
     const digits = raw.replace(/\D/g, "");
     const ten = digits.length === 11 && digits.startsWith("1") ? digits.slice(1) : digits;
     const normalized = ten.length === 10 ? `+1${ten}` : `+1${digits}`;
@@ -37,6 +37,7 @@ export default function Activities({ events, schedule, videos }) {
 
   const scheduleDetails = (item) => {
     if (!item) return null;
+    if (item.time) return item.time;
     switch (item._id || item.title) {
       case "dharma-service":
       case "Won Buddhism Dharma Service":

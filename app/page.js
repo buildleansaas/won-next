@@ -11,20 +11,23 @@ export default async function Page() {
     {
       _id: "dharma-service",
       title: "Won Buddhism Dharma Service",
+      time: "Sun 2:00pm - 4:00pm",
       description:
-        "Please join us from 2 - 4pm for our Traditional Won Buddhist Dharma Service. Seating is limited to 10 people, please text (804) 618-1094 to make a reservation and let us know if you are coming.",
+        "Please join us from 2 - 4pm for our Traditional Won Buddhist Dharma Service. Seating is limited to 10 people, please text 804-243-5878 to make a reservation and let us know if you are coming.",
     },
     {
       _id: "meditation-beginners",
       title: "Meditation Class for Beginners",
+      time: "Sat 10:30am - 12:00 noon",
       description:
-        "Learn how to Meditate according to Won Buddhist doctrine. Join us from 10:30am to 12 noon. Please text (804) 618 - 1094 to make a reservation. We will do 20 Minutes of Qi Gong, 10 minutes of Chanting and a 30 Minute Meditation. The rest will be an open Q&A session.",
+        "Learn how to Meditate according to Won Buddhist doctrine. Join us from 10:30am to 12 noon. Please text 804-243-5878 to make a reservation. We will do 20 Minutes of Qi Gong, 10 minutes of Chanting and a 30 Minute Meditation. The rest will be an open Q&A session.",
     },
     {
       _id: "tai-chi-qigong",
       title: "Tai Chi and Qi Gong",
+      time: "Wed 10:30am - 12:00 noon",
       description:
-        "Tai Chi is meditation in movement. Its soft movements create flows of energy that cultivate your physical and inner strength. In this class, learn about the energy of Yin and Yang to bring health, stability and vitality into your life. Friendly for all ages! Please text (804) 618-1094",
+        "Tai Chi is meditation in movement. Its soft movements create flows of energy that cultivate your physical and inner strength. In this class, learn about the energy of Yin and Yang to bring health, stability and vitality into your life. Friendly for all ages! Please text 804-243-5878",
     },
   ];
 
